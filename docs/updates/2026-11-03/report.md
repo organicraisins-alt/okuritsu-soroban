@@ -24,4 +24,17 @@ local-verification.json / viewport-375.json と画面画像を保存。管理画
 
 ## 公開
 
-未実施。検証済みコミットをmainへ統合後、既存のCloudflare Pages deploy手順で公開し、本番の実測結果を追記する。
+公開済み。実装コミットc785d9bをmainへfast-forwardで統合し、GitHubへpush後、既存のnpm run deployでCloudflare Pagesへ公開。
+
+- 本番：https://okuritsu-soroban.com/
+- デプロイ：https://acd89ad8.dokuritsu-soroban.pages.dev
+- 実測時刻（UTC）：2026-11-03T07:29:12.564Z
+- 全60公開ページHTTP 200、title60件すべて今回の生成HTMLと一致。
+- 会社員比較9・利益別25ページの新title、会社員の冒頭結論、利益別の税・保険料合計を確認。
+- /nenshu/ の換算表と正確な1,050万円への計算リンク、/guide/kojin-jigyouzei/ の税率表・条件付き対象外例を確認。
+- sitemap-index.xmlと子サイトマップはHTTP 200。公開URL60件・重複なし・雛形6件除外を確認。
+- 雛形6件はHTTP 200でnoindexを保持。
+- 会社員年収900万円の本番画面をブラウザーで表示し、新titleと「約661.6万円（月55.1万円）」の結論を確認。本番のCSS幅375pxでもページ全体の横はみ出しなし。
+- 本番画像：production-employee-900-375.png。全URLとtitleの実測データ：production.json。
+- wwwのDNS・転送設定、コンセプト、既存URL、既存の税計算ロジックは変更していない。
+

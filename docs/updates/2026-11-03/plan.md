@@ -8,7 +8,7 @@
 - [x] 東京都主税局と地方税法を確認し、事業税の記事に目安表・条件付き対象外例・6職業リンクを追加。
 - [x] 年収一覧に売上1000〜2000万円（100万円刻み）×経費率20/30/50%の換算表。存在しない利益額はexact計算リンクと前後の既存ページを明記。
 - [x] test/check/build、60sitemap・6noindex・375px・独立レビュー。
-- [ ] mainへ統合・GitHub更新・Cloudflare公開。本番HTTP/title実測。
+- [x] mainへ統合・GitHub更新・Cloudflare公開。本番HTTP/title実測。
 
 ## 変更範囲と判断
 
@@ -18,3 +18,5 @@
 - 管理画面画像は手元に保存し、公開GitHubから除外する。
 
 検証：116テスト、型エラー0、67HTML、sitemap60・noindex6。375px実画面で発見したグリッドの横はみ出しを修正し、66ページで再確認済み。レビューの更新日指摘は計算データ確認日とページ更新日を分離して解決。
+
+公開完了：実装c785d9b、デプロイacd89ad8。全60ページHTTP200・title一致、sitemap60・雛形6noindexをproduction.jsonに記録。
