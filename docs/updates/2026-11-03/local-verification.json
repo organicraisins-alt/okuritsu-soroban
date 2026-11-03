@@ -1,0 +1,411 @@
+{
+  "site": "https://okuritsu-soroban.com",
+  "urls": [
+    "https://okuritsu-soroban.com/",
+    "https://okuritsu-soroban.com/about/",
+    "https://okuritsu-soroban.com/contact/",
+    "https://okuritsu-soroban.com/dokuritsu/",
+    "https://okuritsu-soroban.com/guide/dokuritsu-1nenme/",
+    "https://okuritsu-soroban.com/guide/juminzei-itsu/",
+    "https://okuritsu-soroban.com/guide/kakutei-shinkoku/",
+    "https://okuritsu-soroban.com/guide/keihi/",
+    "https://okuritsu-soroban.com/guide/kojin-jigyouzei/",
+    "https://okuritsu-soroban.com/guide/kokuho-takai/",
+    "https://okuritsu-soroban.com/guide/shiharai-calendar/",
+    "https://okuritsu-soroban.com/guide/yotei-nouzei/",
+    "https://okuritsu-soroban.com/guide/zeisei-kaisei-2026/",
+    "https://okuritsu-soroban.com/hikaku/kaishain-400/",
+    "https://okuritsu-soroban.com/hikaku/kaishain-500/",
+    "https://okuritsu-soroban.com/hikaku/kaishain-600/",
+    "https://okuritsu-soroban.com/hikaku/kaishain-700/",
+    "https://okuritsu-soroban.com/hikaku/kaishain-800/",
+    "https://okuritsu-soroban.com/hikaku/kaishain-900/",
+    "https://okuritsu-soroban.com/hikaku/kaishain-1000/",
+    "https://okuritsu-soroban.com/hikaku/kaishain-1100/",
+    "https://okuritsu-soroban.com/hikaku/kaishain-1200/",
+    "https://okuritsu-soroban.com/logic/",
+    "https://okuritsu-soroban.com/nenshu/",
+    "https://okuritsu-soroban.com/nenshu/300/",
+    "https://okuritsu-soroban.com/nenshu/350/",
+    "https://okuritsu-soroban.com/nenshu/400/",
+    "https://okuritsu-soroban.com/nenshu/450/",
+    "https://okuritsu-soroban.com/nenshu/500/",
+    "https://okuritsu-soroban.com/nenshu/550/",
+    "https://okuritsu-soroban.com/nenshu/600/",
+    "https://okuritsu-soroban.com/nenshu/650/",
+    "https://okuritsu-soroban.com/nenshu/700/",
+    "https://okuritsu-soroban.com/nenshu/750/",
+    "https://okuritsu-soroban.com/nenshu/800/",
+    "https://okuritsu-soroban.com/nenshu/850/",
+    "https://okuritsu-soroban.com/nenshu/900/",
+    "https://okuritsu-soroban.com/nenshu/950/",
+    "https://okuritsu-soroban.com/nenshu/1000/",
+    "https://okuritsu-soroban.com/nenshu/1100/",
+    "https://okuritsu-soroban.com/nenshu/1200/",
+    "https://okuritsu-soroban.com/nenshu/1300/",
+    "https://okuritsu-soroban.com/nenshu/1400/",
+    "https://okuritsu-soroban.com/nenshu/1500/",
+    "https://okuritsu-soroban.com/nenshu/1600/",
+    "https://okuritsu-soroban.com/nenshu/1700/",
+    "https://okuritsu-soroban.com/nenshu/1800/",
+    "https://okuritsu-soroban.com/nenshu/1900/",
+    "https://okuritsu-soroban.com/nenshu/2000/",
+    "https://okuritsu-soroban.com/okuritsu/",
+    "https://okuritsu-soroban.com/privacy/",
+    "https://okuritsu-soroban.com/shokugyo/consultant/",
+    "https://okuritsu-soroban.com/shokugyo/designer/",
+    "https://okuritsu-soroban.com/shokugyo/engineer/",
+    "https://okuritsu-soroban.com/shokugyo/illustrator/",
+    "https://okuritsu-soroban.com/shokugyo/video/",
+    "https://okuritsu-soroban.com/shokugyo/writer/",
+    "https://okuritsu-soroban.com/tools/houjinka/",
+    "https://okuritsu-soroban.com/tools/invoice/",
+    "https://okuritsu-soroban.com/tools/tedori/"
+  ],
+  "pages": [
+    {
+      "route": "/404.html",
+      "title": "ページが見つかりません｜億率",
+      "noindex": true
+    },
+    {
+      "route": "/",
+      "title": "フリーランスの手取り・法人化・資産形成を無料計算｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/tools/tedori/",
+      "title": "フリーランスの手取りはいくら？税金・保険料を計算｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/tools/invoice/",
+      "title": "インボイス登録でいくら変わる？消費税を比較計算｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/tools/houjinka/",
+      "title": "法人化はいくらから？個人事業主との手取り比較｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/shokugyo/writer/",
+      "title": "ライターの手取り・経費・個人事業税｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/shokugyo/video/",
+      "title": "動画編集者の手取り・経費・個人事業税｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/shokugyo/illustrator/",
+      "title": "イラストレーターの手取り・経費・個人事業税｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/shokugyo/engineer/",
+      "title": "Webエンジニアの手取り・経費・個人事業税｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/shokugyo/designer/",
+      "title": "Webデザイナーの手取り・経費・個人事業税｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/shokugyo/consultant/",
+      "title": "コンサルタントの手取り・経費・個人事業税｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/setsuzei/shoukibo-kyousai/",
+      "title": "解説準備中：shoukibo-kyousai｜億率",
+      "noindex": true
+    },
+    {
+      "route": "/setsuzei/ideco/",
+      "title": "解説準備中：ideco｜億率",
+      "noindex": true
+    },
+    {
+      "route": "/setsuzei/aoiro-65/",
+      "title": "解説準備中：aoiro-65｜億率",
+      "noindex": true
+    },
+    {
+      "route": "/privacy/",
+      "title": "プライバシーポリシー｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/okuritsu/",
+      "title": "資産1億円への到達割合をシミュレーション｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/",
+      "title": "フリーランスの手取りはいくら？利益別早見表｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/950/",
+      "title": "フリーランス利益950万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/900/",
+      "title": "フリーランス利益900万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/850/",
+      "title": "フリーランス利益850万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/800/",
+      "title": "フリーランス利益800万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/750/",
+      "title": "フリーランス利益750万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/700/",
+      "title": "フリーランス利益700万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/650/",
+      "title": "フリーランス利益650万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/600/",
+      "title": "フリーランス利益600万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/550/",
+      "title": "フリーランス利益550万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/500/",
+      "title": "フリーランス利益500万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/450/",
+      "title": "フリーランス利益450万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/400/",
+      "title": "フリーランス利益400万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/350/",
+      "title": "フリーランス利益350万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/300/",
+      "title": "フリーランス利益300万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/2000/",
+      "title": "フリーランス利益2000万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/1900/",
+      "title": "フリーランス利益1900万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/1800/",
+      "title": "フリーランス利益1800万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/1700/",
+      "title": "フリーランス利益1700万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/1600/",
+      "title": "フリーランス利益1600万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/1500/",
+      "title": "フリーランス利益1500万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/1400/",
+      "title": "フリーランス利益1400万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/1300/",
+      "title": "フリーランス利益1300万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/1200/",
+      "title": "フリーランス利益1200万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/1100/",
+      "title": "フリーランス利益1100万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/nenshu/1000/",
+      "title": "フリーランス利益1000万円の手取りと税金はいくら？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/logic/",
+      "title": "計算ロジックと税率・検算データの公開｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/houjinka/yakuin-housyu/",
+      "title": "解説準備中：yakuin-housyu｜億率",
+      "noindex": true
+    },
+    {
+      "route": "/houjinka/timing/",
+      "title": "解説準備中：timing｜億率",
+      "noindex": true
+    },
+    {
+      "route": "/houjinka/shakai-hoken/",
+      "title": "解説準備中：shakai-hoken｜億率",
+      "noindex": true
+    },
+    {
+      "route": "/hikaku/kaishain-900/",
+      "title": "年収900万円の手取りはいくら？独立後に同じ手取りに必要な売上｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/hikaku/kaishain-800/",
+      "title": "年収800万円の手取りはいくら？独立後に同じ手取りに必要な売上｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/hikaku/kaishain-700/",
+      "title": "年収700万円の手取りはいくら？独立後に同じ手取りに必要な売上｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/hikaku/kaishain-600/",
+      "title": "年収600万円の手取りはいくら？独立後に同じ手取りに必要な売上｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/hikaku/kaishain-500/",
+      "title": "年収500万円の手取りはいくら？独立後に同じ手取りに必要な売上｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/hikaku/kaishain-400/",
+      "title": "年収400万円の手取りはいくら？独立後に同じ手取りに必要な売上｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/hikaku/kaishain-1200/",
+      "title": "年収1200万円の手取りはいくら？独立後に同じ手取りに必要な売上｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/hikaku/kaishain-1100/",
+      "title": "年収1100万円の手取りはいくら？独立後に同じ手取りに必要な売上｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/hikaku/kaishain-1000/",
+      "title": "年収1000万円の手取りはいくら？独立後に同じ手取りに必要な売上｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/guide/zeisei-kaisei-2026/",
+      "title": "令和8年の税制・料率更新で手取りはいくら変わる？｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/guide/yotei-nouzei/",
+      "title": "予定納税とは？対象・7月と11月の支払いと減額申請｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/guide/shiharai-calendar/",
+      "title": "個人事業主の税金・保険料の支払いカレンダー｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/guide/kokuho-takai/",
+      "title": "国保が高い理由と負担を見直す方法｜任意継続と比較｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/guide/kojin-jigyouzei/",
+      "title": "個人事業税の計算と対象業種・対象外の考え方｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/guide/keihi/",
+      "title": "フリーランスの必要経費と家事按分の考え方｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/guide/kakutei-shinkoku/",
+      "title": "令和8年分の確定申告｜個人事業主の準備と流れ｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/guide/juminzei-itsu/",
+      "title": "個人事業主の住民税はいつ払う？普通徴収のしくみ｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/guide/dokuritsu-1nenme/",
+      "title": "独立1年目のお金の落とし穴と開業時の届出｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/dokuritsu/",
+      "title": "会社員から独立するには？お金と手続きの準備｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/contact/",
+      "title": "お問い合わせ｜億率",
+      "noindex": false
+    },
+    {
+      "route": "/about/",
+      "title": "運営者情報と計算の確認・更新方針｜億率",
+      "noindex": false
+    }
+  ],
+  "excluded": [
+    "/setsuzei/shoukibo-kyousai/",
+    "/setsuzei/ideco/",
+    "/setsuzei/aoiro-65/",
+    "/houjinka/yakuin-housyu/",
+    "/houjinka/timing/",
+    "/houjinka/shakai-hoken/"
+  ],
+  "broken": []
+}

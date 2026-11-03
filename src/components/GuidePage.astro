@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BusinessTaxReference from './BusinessTaxReference.astro';
 import VoluntaryCalculator from './VoluntaryCalculator.astro';
 import { reformComparison } from '../lib/tax/comparisons';
 import { man, yen } from '../lib/tax/format';
@@ -79,6 +80,9 @@ const article = Astro.site
         {s.paragraphs.map((p) => (
           <p>{p}</p>
         ))}
+        {guide.slug === 'kojin-jigyouzei' && s.id === 'industry' && (
+          <BusinessTaxReference />
+        )}
       </section>
     ))}
     {guide.slug === 'zeisei-kaisei-2026' && (

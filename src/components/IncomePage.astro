@@ -6,9 +6,15 @@ import TaxDetails from './TaxDetails.astro';
 import IncomeOkuritsu from './IncomeOkuritsu.astro';
 import FAQ from './FAQ.astro';
 import { incomeSummary } from '../lib/tax/content';
-import { incomeAmounts, contentUpdated } from '../data/amounts';
+import {
+  incomeAmounts,
+  employeeAmounts,
+  contentUpdated,
+  incomePagesUpdated,
+} from '../data/amounts';
 import { yen, man } from '../lib/tax/format';
 import { renderPR } from '../lib/tools/markup';
+import { taxAndInsuranceTotal } from '../lib/tax/page-summary';
 interface Props {
   amount: number;
 }
@@ -28,7 +34,7 @@ const capNames = {
 ---
 
 <BaseLayout
-  title={`フリーランス利益${amount}万円の手取りはいくら？`}
+  title={`フリーランス利益${amount}万円の手取りと税金はいくら？`}
   description={`利益${amount}万円の手取りは年間${m.annualText}、月${m.monthlyText}が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。`}
   breadcrumbs={[
     { name: 'ホーム', path: '/' },
@@ -47,6 +53,18 @@ const capNames = {
     <section class="headline">
       <h2>利益{man(profit)}の手取りの目安</h2>
       <div class="big">{m.annualText}</div>
+      <p>
+        税金と保険料の合計：
+        <strong>{yen(taxAndInsuranceTotal(m.result))}</strong>（
+        <a href="#income-breakdown">内訳</a>）
+      </p>
+      {employeeAmounts.includes(amount) && (
+        <p>
+          <a href={`/hikaku/kaishain-${amount}/`}>
+            会社員年収{amount}万円の手取りと独立後に必要な売上を確認
+          </a>
+        </p>
+      )}
       <dl class="summary-metrics">
         <div>
           <dt>月あたり</dt>
@@ -227,7 +245,10 @@ const capNames = {
         </li>
       </ul>
       <p>
-        最終更新日：<time datetime={contentUpdated}>{contentUpdated}</time>
+        計算データの確認日：
+        <time datetime={contentUpdated}>{contentUpdated}</time> ／
+        ページ更新日：
+        <time datetime={incomePagesUpdated}>{incomePagesUpdated}</time>
       </p>
     </section>
   </article>

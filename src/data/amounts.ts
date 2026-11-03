@@ -7,3 +7,6 @@ export const employeeAmounts = Array.from(
   (_, i) => 400 + i * 100,
 );
 export const contentUpdated = '2026-10-26';
+
+// Page copy/navigation update, separate from the unchanged calculation-data date.
+export const incomePagesUpdated = '2026-11-03';

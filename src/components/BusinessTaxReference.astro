@@ -1,0 +1,114 @@
+---
+import { jobs } from '../data/jobs';
+const categories = [
+  {
+    name: '第1種事業',
+    rate: '5%',
+    examples: '物品販売業、製造業、請負業、広告業など',
+  },
+  { name: '第2種事業', rate: '4%', examples: '畜産業、水産業、薪炭製造業' },
+  {
+    name: '第3種事業（原則）',
+    rate: '5%',
+    examples: '医業、弁護士業、デザイン業、コンサルタント業など',
+  },
+  {
+    name: '第3種事業（一部）',
+    rate: '3%',
+    examples:
+      'あんま・マッサージ・指圧・はり・きゅう・柔道整復などの医業類似事業、装蹄師業',
+  },
+];
+---
+
+<div class="business-reference">
+  <h3>法定業種（第1種〜第3種）と税率の目安</h3>
+  <p>
+    東京都主税局の一覧から代表例を抜粋しています。地方税法第72条の2が対象事業を、第72条の49の17が標準税率を定めています。実際に営む仕事がどの区分に当たるかを先に確認してください。
+  </p>
+  <div
+    class="table-scroll"
+    tabindex="0"
+    role="region"
+    aria-label="個人事業税の法定業種と税率"
+  >
+    <table class="data plain">
+      <caption>東京都の個人事業税：代表的な業種と税率</caption>
+      <thead>
+        <tr>
+          <th scope="col">区分</th>
+          <th scope="col">税率</th>
+          <th scope="col">代表例</th>
+        </tr>
+      </thead>
+      <tbody>
+        {categories.map((category) => (
+          <tr>
+            <th scope="row">{category.name}</th>
+            <td>{category.rate}</td>
+            <td>{category.examples}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="assumptions">
+    このサイトの小計算は、対象業種・税率5%の概算モデルです。4%・3%の業種や事業を兼ねる場合の所得の配分を、この表に応じて自動判定する機能はありません。
+  </p>
+  <h3>法定業種に含まれず対象外になりやすい例</h3>
+  <p>
+    法定業種に当たらない文筆・創作だけを行う場合は、個人事業税の対象外となることがあります。以下は法定業種一覧と照合するための例であり、職業名だけで対象外を確定するものではありません。
+  </p>
+  <ul>
+    <li>
+      小説・詩などの執筆だけを行う文筆活動。広告制作、編集の請負、出版業などを兼ねる場合は、業務ごとの確認が必要です。
+    </li>
+    <li>
+      絵画などの純粋な創作を行う活動。デザイン制作や受託制作、物品販売等に当たる内容があれば、対象業種に含まれる可能性があります。
+    </li>
+  </ul>
+  <p>
+    エンジニアは「請負業」などに当たるか、デザイナーは法定の「デザイン業」に当たるかを、実際の契約と業務内容から確認します。エンジニアだから非課税、デザイナーだからすべて同じ扱い、とは断定できません。成果物、契約書、請求書、売上の内訳を都税事務所へ示して確認してください。
+  </p>
+  <h3>職業別モデルで個人事業税の前提を確認</h3>
+  <ul>
+    {jobs.map((job) => (
+      <li>
+        <a href={`/shokugyo/${job.slug}/`}>
+          {job.name}の手取り・経費・個人事業税の前提
+        </a>
+      </li>
+    ))}
+  </ul>
+  <p class="assumptions">
+    各職業の税率・対象の設定は試算上の前提です。課税対象かどうかの認定ではありません。
+  </p>
+  <p>
+    出典：
+    <a href="https://www.tax.metro.tokyo.lg.jp/kazei/work/kojin_ji/">
+      東京都主税局：個人事業税（法定業種と税率）
+    </a>{' '}
+    ／{' '}
+    <a href="https://laws.e-gov.go.jp/law/325AC0000000226">
+      e-Gov：地方税法（第72条の2・第72条の49の17）
+    </a>
+  </p>
+</div>
+
+<style>
+  .business-reference {
+    margin-top: 1.5rem;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .business-reference h3 {
+    margin-top: 1.5rem;
+  }
+  .business-reference table {
+    min-width: 570px;
+  }
+  .business-reference td:last-child {
+    white-space: normal;
+    min-width: 18rem;
+  }
+</style>

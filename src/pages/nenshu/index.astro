@@ -5,6 +5,8 @@ import { sole } from '../../lib/tax/sole';
 import { standardOptions } from '../../lib/tax/content';
 import { employeeEquivalent } from '../../lib/tax/employee';
 import { yen, man } from '../../lib/tax/format';
+import { salesProfitRows } from '../../lib/tax/page-summary';
+import { profitPageLinks } from '../../lib/content/income-links';
 ---
 
 <BaseLayout
@@ -57,5 +59,87 @@ import { yen, man } from '../../lib/tax/format';
       金額は概算であり、正確な税額を保証しません。各ページで条件別の差額や法人化との比較を確認できます。
     </p>
     <a href="/tools/tedori/">売上と経費から条件を変える →</a>
+    <section class="block" id="sales-profit">
+      <h2>売上1,000万〜2,000万円は、利益いくら？</h2>
+      <p>
+        売上から経費を引いた金額が利益です。経費率20%・30%・50%の3条件で換算しています。税金・保険料や生活費を引く前の金額で、手取りではありません。
+      </p>
+      <div
+        class="table-scroll"
+        tabindex="0"
+        role="region"
+        aria-label="売上と経費率から利益へ換算する表"
+      >
+        <table class="data sales-profit-table">
+          <caption>売上×経費率別の利益（100万円刻み）</caption>
+          <thead>
+            <tr>
+              <th scope="col">年間売上</th>
+              {[20, 30, 50].map((percent) => (
+                <th scope="col">経費率{percent}%</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {salesProfitRows().map((row) => (
+              <tr>
+                <th scope="row">{man(row.sales)}</th>
+                {row.scenarios.map((s) => {
+                  const links = profitPageLinks(s.profit);
+                  const exact = links.find((link) => link.exact);
+                  return (
+                    <td>
+                      {exact ? (
+                        <a href={exact.href}>利益{man(s.profit)}</a>
+                      ) : (
+                        <>
+                          <a
+                            href={`/tools/tedori/?sales=${row.sales / 10000}&exp=${s.expenses / 10000}`}
+                          >
+                            利益{man(s.profit)}で計算
+                          </a>
+                          <small class="nearby-income">
+                            近い利益：
+                            {links.map((link, i) => (
+                              <>
+                                {i > 0 && ' / '}
+                                <a href={link.href}>{link.amount}万円</a>
+                              </>
+                            ))}
+                          </small>
+                        </>
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="assumptions">
+        同じ利益額のページがない場合は、正確な売上・経費を計算ツールに引き継ぎ、前後の利益ページを併記しています。表にない経費率も手取り計算で変更できます。
+      </p>
+      <p>
+        <strong>
+          売上1,000万円を超える方は、消費税も別に確認してください。
+        </strong>
+        上の手取り早見表では消費税を差し引いていません。納税義務はその年の売上だけでは決まらず、基準期間・特定期間やインボイス登録などで異なります。
+      </p>
+      <a href="/tools/invoice/">
+        インボイス計算で消費税・登録の有無による手残りを比べる →
+      </a>
+    </section>
   </article>
 </BaseLayout>
+
+<style>
+  .sales-profit-table {
+    min-width: 620px;
+  }
+  .nearby-income {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.75rem;
+  }
+</style>

@@ -304,14 +304,26 @@ export const guides: Guide[] = [
   },
   {
     publishedAt: '2026-10-27',
-    updatedAt: '2026-10-27',
+    updatedAt: '2026-11-03',
+    sourceCheckedAt: '2026-11-03',
     slug: 'kojin-jigyouzei',
     title: '個人事業税の計算と対象業種・対象外の考え方',
     description:
       '個人事業税は肩書だけでは決まりません。法定業種、事業主控除、青色申告との違い、年の途中の開業、納付時期を説明し、対象業種5%のケースを売上と経費から試算します。',
     intro:
       'フリーランスなら全員が同じ個人事業税を払うわけではありません。実際の仕事が法定業種に当たるかを確認することが、税率を掛ける前の第一歩です。',
-    sources: [source.business, source.blue, source.expense],
+    sources: [
+      {
+        title: '東京都主税局：個人事業税・法定業種と税率',
+        url: 'https://www.tax.metro.tokyo.lg.jp/kazei/work/kojin_ji/',
+      },
+      {
+        title: 'e-Gov：地方税法（第72条の2・第72条の49の17）',
+        url: 'https://laws.e-gov.go.jp/law/325AC0000000226',
+      },
+      source.blue,
+      source.expense,
+    ],
     sections: [
       {
         id: 'industry',

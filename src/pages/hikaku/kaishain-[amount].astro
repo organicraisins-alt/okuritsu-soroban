@@ -1,7 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FAQ from '../../components/FAQ.astro';
-import { employeeAmounts, contentUpdated } from '../../data/amounts';
+import {
+  employeeAmounts,
+  contentUpdated,
+  incomePagesUpdated,
+} from '../../data/amounts';
 import { employeeComparison } from '../../lib/tax/content';
 import { renderEmployeeComparison } from '../../lib/tools/employee-comparison';
 import { renderPR } from '../../lib/tools/markup';
@@ -40,7 +44,7 @@ const faqs = [
 ---
 
 <BaseLayout
-  title={`会社員年収${amount}万円と同じ手取りに必要な売上は？`}
+  title={`年収${amount}万円の手取りはいくら？独立後に同じ手取りに必要な売上`}
   description={`会社員年収${amount}万円の手取り${yen(m.employee.total)}と同じ手残りを目指す売上を試算。経費率20%なら約${man(m.sales)}。経費率を変更して税金・社会保険の内訳を比較できます。`}
   breadcrumbs={[
     { name: 'ホーム', path: '/' },
@@ -57,6 +61,21 @@ const faqs = [
         会社員年収{amount.toLocaleString('ja-JP')}
         万円と同じ手取りに必要なフリーランスの売上は？
       </h1>
+      <p class="employee-answer">
+        <strong>
+          会社員 年収{amount}万円の手取り：約{man(m.employee.total)}（月
+          {man(m.employee.total / 12)}）
+        </strong>
+      </p>
+      <p class="assumptions">
+        東京23区・40歳未満・独身・扶養なし・賞与なしの概算です。年収を12等分し、年度の保険料率を通年で使っています。
+      </p>
+      <p>
+        <a href={`/nenshu/${amount}/`}>
+          フリーランス利益{amount}万円の手取り・税金と比較する
+        </a>
+        （給与の額面年収と事業利益は異なります）
+      </p>
       <p>
         会社員の額面年収と、フリーランスの売上は違う数字です。仕事の経費と税金・保険料を引いた後の金額を並べて比べます。
       </p>
@@ -134,7 +153,10 @@ const faqs = [
         </li>
       </ul>
       <p>
-        最終更新日：<time datetime={contentUpdated}>{contentUpdated}</time>
+        計算データの確認日：
+        <time datetime={contentUpdated}>{contentUpdated}</time> ／
+        ページ更新日：
+        <time datetime={incomePagesUpdated}>{incomePagesUpdated}</time>
       </p>
     </section>
   </article>

@@ -1,0 +1,398 @@
+[
+  {
+    "client": 361,
+    "route": "/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/about/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/contact/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/dokuritsu/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/guide/dokuritsu-1nenme/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/guide/juminzei-itsu/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/guide/kakutei-shinkoku/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/guide/keihi/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/guide/kojin-jigyouzei/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/guide/kokuho-takai/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/guide/shiharai-calendar/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/guide/yotei-nouzei/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/guide/zeisei-kaisei-2026/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/hikaku/kaishain-400/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/hikaku/kaishain-500/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/hikaku/kaishain-600/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/hikaku/kaishain-700/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/hikaku/kaishain-800/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/hikaku/kaishain-900/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/hikaku/kaishain-1000/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/hikaku/kaishain-1100/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/hikaku/kaishain-1200/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/logic/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/300/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/350/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/400/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/450/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/500/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/550/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/600/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/650/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/700/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/750/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/800/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/850/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/900/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/950/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/1000/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/1100/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/1200/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/1300/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/1400/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/1500/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/1600/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/1700/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/1800/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/1900/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/nenshu/2000/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/okuritsu/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/privacy/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/shokugyo/consultant/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/shokugyo/designer/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/shokugyo/engineer/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/shokugyo/illustrator/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/shokugyo/video/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/shokugyo/writer/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/tools/houjinka/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/tools/invoice/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/tools/tedori/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/setsuzei/shoukibo-kyousai/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/setsuzei/ideco/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/setsuzei/aoiro-65/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/houjinka/yakuin-housyu/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/houjinka/timing/",
+    "scroll": 361,
+    "width": 375
+  },
+  {
+    "client": 361,
+    "route": "/houjinka/shakai-hoken/",
+    "scroll": 361,
+    "width": 375
+  }
+]
