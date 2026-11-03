@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="お問い合わせ"
+  description="お問い合わせ窓口は現在準備中です。計算の誤りに気づかれた場合の受付方法は、準備ができしだいこのページでお知らせします。"
+  breadcrumbs={[
+    { name: 'ホーム', path: '/' },
+    { name: 'お問い合わせ', path: '/contact/' },
+  ]}
+>
+  <article class="wrap income-article">
+    <header class="sec-title">
+      <h1>お問い合わせ</h1>
+    </header>
+    <section class="block">
+      <!-- TODO(運営者が記入) -->
+      <p>
+        お問い合わせ窓口は現在準備中です。計算の誤りに気づかれた場合の受付方法は、準備ができしだいこのページでお知らせします。
+      </p>
+    </section>
+  </article>
+</BaseLayout>

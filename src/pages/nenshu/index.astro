@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { incomeAmounts } from '../../data/amounts';
+import { sole } from '../../lib/tax/sole';
+import { standardOptions } from '../../lib/tax/content';
+import { employeeEquivalent } from '../../lib/tax/employee';
+import { yen, man } from '../../lib/tax/format';
+---
+
+<BaseLayout
+  title="フリーランスの手取りはいくら？利益別早見表"
+  description="個人事業主の利益300万〜2,000万円の手取りを一覧で比較。令和8年分の税制と令和8年度保険料率で計算し、各金額の内訳・支払いカレンダーへ進めます。"
+  breadcrumbs={[
+    { name: 'ホーム', path: '/' },
+    { name: '年収別手取り早見表', path: '/nenshu/' },
+  ]}
+>
+  <article class="wrap income-article">
+    <h1>フリーランスの年収別手取り早見表</h1>
+    <p>
+      売上から経費を引いた「利益」で比較しています。東京23区・独身・扶養なし・40歳未満・青色65万円控除・個人事業税ありの概算です。
+    </p>
+    <div
+      class="table-scroll"
+      tabindex="0"
+      role="region"
+      aria-label="25金額の手取り早見表"
+    >
+      <table class="data home-table">
+        <caption>利益300万〜2,000万円の手取り</caption>
+        <thead>
+          <tr>
+            <th scope="col">利益</th>
+            <th scope="col">年間の手取り</th>
+            <th scope="col">月あたり</th>
+            <th scope="col">同じ手取りの会社員年収</th>
+          </tr>
+        </thead>
+        <tbody>
+          {incomeAmounts.map((amount) => {
+            const r = sole(amount * 10000, 0, standardOptions);
+            return (
+              <tr>
+                <th scope="row">
+                  <a href={`/nenshu/${amount}/`}>{amount}万円</a>
+                </th>
+                <td class="take">{yen(r.total)}</td>
+                <td>{yen(r.total / 12)}</td>
+                <td>{man(employeeEquivalent(r.total))}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+    <p class="assumptions">
+      金額は概算であり、正確な税額を保証しません。各ページで条件別の差額や法人化との比較を確認できます。
+    </p>
+    <a href="/tools/tedori/">売上と経費から条件を変える →</a>
+  </article>
+</BaseLayout>

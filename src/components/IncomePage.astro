@@ -1,0 +1,234 @@
+---
+import AssumptionLinks from './AssumptionLinks.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import IncomeBreakdown from './IncomeBreakdown.astro';
+import TaxDetails from './TaxDetails.astro';
+import IncomeOkuritsu from './IncomeOkuritsu.astro';
+import FAQ from './FAQ.astro';
+import { incomeSummary } from '../lib/tax/content';
+import { incomeAmounts, contentUpdated } from '../data/amounts';
+import { yen, man } from '../lib/tax/format';
+import { renderPR } from '../lib/tools/markup';
+interface Props {
+  amount: number;
+}
+const { amount } = Astro.props,
+  profit = amount * 10000,
+  m = incomeSummary(profit);
+const title = `フリーランス・個人事業主の年収（利益）${amount.toLocaleString('ja-JP')}万円の手取りは？`;
+const index = incomeAmounts.indexOf(amount),
+  previous = incomeAmounts[index - 1],
+  next = incomeAmounts[index + 1];
+const capNames = {
+  medical: '医療分',
+  support: '後期高齢者支援金分',
+  care: '介護分',
+  child: '子ども・子育て支援金分',
+};
+---
+
+<BaseLayout
+  title={`フリーランス利益${amount}万円の手取りはいくら？`}
+  description={`利益${amount}万円の手取りは年間${m.annualText}、月${m.monthlyText}が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。`}
+  breadcrumbs={[
+    { name: 'ホーム', path: '/' },
+    { name: '年収別の手取り早見表', path: '/nenshu/' },
+    { name: `利益${amount}万円`, path: `/nenshu/${amount}/` },
+  ]}
+>
+  <article class="wrap income-article">
+    <header class="sec-title">
+      <span class="kicker">令和8年分・単身の個人事業主</span>
+      <h1>{title}</h1>
+      <p>
+        このページの「年収」は売上ではなく、経費を引いた後の利益です。売上が同じでも経費・年齢・申告方法によって手取りは変わります。
+      </p>
+    </header>
+    <section class="headline">
+      <h2>利益{man(profit)}の手取りの目安</h2>
+      <div class="big">{m.annualText}</div>
+      <dl class="summary-metrics">
+        <div>
+          <dt>月あたり</dt>
+          <dd>{m.monthlyText}</dd>
+        </div>
+        <div>
+          <dt>利益に対する手取り率</dt>
+          <dd>{m.rate.toFixed(1)}%</dd>
+        </div>
+        <div>
+          <dt>同じ手取りの会社員年収</dt>
+          <dd>約{man(m.equivalent)}</dd>
+        </div>
+      </dl>
+      <p class="assumptions">
+        概算であり、正確な税額を保証しません。東京23区・独身・扶養なし・40歳未満・青色申告65万円控除・個人事業税あり・追加控除なし。保険料は令和8年度率を12か月使い、軽減・減免などは省略しています。
+        <AssumptionLinks />
+      </p>
+      <a class="primary-link" href={`/tools/tedori/?sales=${amount}&exp=0`}>
+        この金額で条件を変えて計算する →
+      </a>
+    </section>
+    <section class="block">
+      <h2>利益{man(profit)}で押さえたいポイント</h2>
+      <p>
+        控除を引いた課税所得は{yen(m.steps[6]!.amount)}で、所得税の税率は
+        {m.band[1] * 100}
+        %の区分です。これは利益全体にこの税率をかける意味ではなく、低い税率の区分から段階的に計算します。
+      </p>
+      {m.near.map(([limit]) => (
+        <p>
+          課税所得の税率区分が切り替わる{man(limit)}
+          の近くです。控除や保険料が変わると税率区分をまたぐことがあります。
+        </p>
+      ))}
+      {m.caps.length ? (
+        <p>
+          国保は{m.caps.map((p) => capNames[p.key]).join('・')}
+          が上限に達しています。上限のある区分と、まだ所得に応じて増える区分を分けて確認してください。
+        </p>
+      ) : (
+        <p>
+          基本条件では国保の各区分はまだ上限に達していません。所得が増えると保険料も増えるため、所得税だけで手取りを考えないことが大切です。
+        </p>
+      )}
+      <p>
+        {m.verdict.title}。{m.verdict.note}
+      </p>
+    </section>
+    <IncomeBreakdown result={m.result} />
+    <TaxDetails steps={m.steps} calendar={m.calendar} />
+    <section class="block">
+      <h2>申告方法・年齢などを変えた場合</h2>
+      <div
+        class="table-scroll"
+        tabindex="0"
+        role="region"
+        aria-label="条件別の手取り比較"
+      >
+        <table class="data plain">
+          <caption>利益{man(profit)}で条件を1つずつ変更</caption>
+          <thead>
+            <tr>
+              <th scope="col">条件</th>
+              <th scope="col">年間の手取り</th>
+              <th scope="col">基本条件との差</th>
+            </tr>
+          </thead>
+          <tbody>
+            {m.scenarios.map((x) => (
+              <tr>
+                <th scope="row">{x.label}</th>
+                <td>{yen(x.result.total)}</td>
+                <td>{yen(x.result.total - m.result.total)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="assumptions">
+        「40〜64歳」「事業税対象外」は青色65万円控除を維持し、それぞれの条件だけを変えています。
+      </p>
+    </section>
+    <section class="block">
+      <h2>小規模企業共済・iDeCoを利用した場合</h2>
+      <p>
+        所得から掛金を差し引く「所得控除」による差額です。月7万円の小規模企業共済、月6.8万円のiDeCoを12か月続ける上限シナリオで比べます。
+      </p>
+      <div
+        class="table-scroll"
+        tabindex="0"
+        role="region"
+        aria-label="積立による税負担の差額"
+      >
+        <table class="data plain">
+          <caption>掛金を上限シナリオまで積み立てた場合</caption>
+          <thead>
+            <tr>
+              <th scope="col">制度</th>
+              <th scope="col">年間掛金</th>
+              <th scope="col">税負担が減る額</th>
+              <th scope="col">掛金支払い後の現金</th>
+            </tr>
+          </thead>
+          <tbody>
+            {m.savings.map((x) => (
+              <tr>
+                <th scope="row">{x.label}</th>
+                <td>{yen(x.contribution)}</td>
+                <td>{yen(x.saving)}</td>
+                <td>{yen(x.cashAfterContribution)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="assumptions">
+        税負担が減る分を、使える現金の増加と混同しないでください。掛金は将来の資産になります。iDeCoは原則60歳まで引き出せず、国民年金基金との合算上限・年度途中の制度変更などは別途確認が必要です。この表の掛金は試算上の仮定です。
+      </p>
+    </section>
+    <section class="block">
+      <h2>法人化した場合との比較</h2>
+      <div class:list={['verdict', m.verdict.kind === 'corp' ? 'yes' : 'no']}>
+        <strong>{m.verdict.title}</strong>
+        <span>{m.verdict.note}</span>
+      </div>
+      <dl class="rows">
+        <div>
+          <dt>個人事業主の手取り</dt>
+          <dd>{m.annualText}</dd>
+        </div>
+        <div>
+          <dt>法人化後の最終手取り</dt>
+          <dd>{yen(m.company.total)}</dd>
+        </div>
+        <div>
+          <dt>探索した役員報酬</dt>
+          <dd>{yen(m.company.R)}</dd>
+        </div>
+      </dl>
+      <p>
+        法人は税理士費用を年間30万円とし、会社に残ったお金も配当で受け取る税金を差し引いています。会社の資産が、そのまま個人の生活費になるわけではありません。
+      </p>
+      <a href={`/tools/houjinka/?sales=${amount}&exp=0`}>
+        法人化シミュレーターで条件を変える →
+      </a>
+    </section>
+    <nav class="amount-neighbors" aria-label="前後の利益と早見表">
+      {previous && <a href={`/nenshu/${previous}/`}>← 利益{previous}万円</a>}
+      <a href="/nenshu/">手取り早見表</a>
+      {next && <a href={`/nenshu/${next}/`}>利益{next}万円 →</a>}
+    </nav>
+    <IncomeOkuritsu profit={profit} />
+    <FAQ items={m.faqs} />
+    <div
+      set:html={renderPR(amount >= 800 ? ['tax', 'setup'] : ['soft', 'ideco'])}
+    />
+    <section class="block">
+      <h2>計算の前提と出典</h2>
+      <p>
+        国保は成人1人の医療・後期支援・介護・子ども支援の区分ごとに上限を適用します。会社員側の社会保険等級、住民税の調整控除、法人の配当課税は簡略化した概算です。消費税は手取りから差し引いていません。
+      </p>
+      <ul>
+        <li>
+          <a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1199.htm">
+            国税庁：所得税の基礎控除
+          </a>
+        </li>
+        <li>
+          <a href="https://www.city.shinjuku.lg.jp/hoken/hoken01_001028.html">
+            新宿区：国民健康保険料の計算方法
+          </a>
+        </li>
+        <li>
+          <a href="https://www.nenkin.go.jp/service/kokunen/hokenryo/hokenryogaku.files/R8_hokenryou.pdf">
+            日本年金機構：令和8年度の国民年金保険料
+          </a>
+        </li>
+      </ul>
+      <p>
+        最終更新日：<time datetime={contentUpdated}>{contentUpdated}</time>
+      </p>
+    </section>
+  </article>
+</BaseLayout>

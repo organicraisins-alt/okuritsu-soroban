@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import { employeeAmounts, contentUpdated } from '../../data/amounts';
+import { employeeComparison } from '../../lib/tax/content';
+import { renderEmployeeComparison } from '../../lib/tools/employee-comparison';
+import { renderPR } from '../../lib/tools/markup';
+import { yen, man } from '../../lib/tax/format';
+export function getStaticPaths() {
+  return employeeAmounts.map((amount) => ({
+    params: { amount: String(amount) },
+    props: { amount },
+  }));
+}
+interface Props {
+  amount: number;
+}
+const { amount } = Astro.props,
+  gross = amount * 10000,
+  m = employeeComparison(gross, 0.2);
+const i = employeeAmounts.indexOf(amount),
+  prev = employeeAmounts[i - 1],
+  next = employeeAmounts[i + 1];
+const faqs = [
+  {
+    question: `会社員年収${amount}万円と同じ手取りに必要な売上はいくらですか？`,
+    answer: `標準条件の経費率20%なら売上約${man(m.sales)}、利益約${man(m.profit)}が目安です。経費率を変えると必要な売上も変わります。`,
+  },
+  {
+    question: '会社員の年収を、そのままフリーランスの売上と比較できますか？',
+    answer:
+      '比較できません。売上から仕事の経費を払った利益をもとに、税金・保険料を払った後のお金で比べる必要があります。',
+  },
+  {
+    question: '同じ手取りなら独立しても生活は同じですか？',
+    answer:
+      '有給休暇、仕事のない期間、退職金、将来の年金などは異なります。このページは税金と保険料を引いた金額の比較であり、独立の可否を決めるものではありません。',
+  },
+];
+---
+
+<BaseLayout
+  title={`会社員年収${amount}万円と同じ手取りに必要な売上は？`}
+  description={`会社員年収${amount}万円の手取り${yen(m.employee.total)}と同じ手残りを目指す売上を試算。経費率20%なら約${man(m.sales)}。経費率を変更して税金・社会保険の内訳を比較できます。`}
+  breadcrumbs={[
+    { name: 'ホーム', path: '/' },
+    {
+      name: `会社員年収${amount}万円との比較`,
+      path: `/hikaku/kaishain-${amount}/`,
+    },
+  ]}
+>
+  <article class="wrap income-article">
+    <header class="sec-title">
+      <span class="kicker">令和8年分・会社員と独立後のお金</span>
+      <h1>
+        会社員年収{amount.toLocaleString('ja-JP')}
+        万円と同じ手取りに必要なフリーランスの売上は？
+      </h1>
+      <p>
+        会社員の額面年収と、フリーランスの売上は違う数字です。仕事の経費と税金・保険料を引いた後の金額を並べて比べます。
+      </p>
+    </header>
+    <form
+      class="form expense-form"
+      id="expense-form"
+      data-gross={gross}
+      novalidate
+    >
+      <h2>フリーランス側の経費率を変える</h2>
+      <div class="field">
+        <label for="expense-rate">売上に占める経費の割合（0〜90%）</label>
+        <div class="money">
+          <input
+            id="expense-rate"
+            name="expenseRate"
+            value="20"
+            inputmode="decimal"
+            aria-describedby="expense-error"
+          />
+          <span>%</span>
+        </div>
+        <p class="input-error" id="expense-error" hidden></p>
+      </div>
+      <button class="share-btn" type="submit">
+        この経費率で比較する
+      </button>
+      <noscript>
+        <p>JavaScript無効時は経費率20%の比較を表示します。</p>
+      </noscript>
+    </form>
+    <div
+      id="comparison-result"
+      class="comparison-result"
+      set:html={renderEmployeeComparison(gross, 0.2)}
+    />
+    <p id="comparison-status" class="sr-only" role="status"></p>
+    <section class="block">
+      <h2>手取りだけでは比べられないもの</h2>
+      <p>
+        仕事を休む期間や営業・記帳の時間、機材の買替えも独立後の負担になります。会社員年収
+        {man(gross)}の手取り{yen(m.employee.total)}
+        は、必要な生活費を考える出発点として使ってください。
+      </p>
+      <a href="/nenshu/">利益別の手取りを早見表で見る →</a>
+      <a href="/tools/houjinka/">将来の法人化も比較する →</a>
+    </section>
+    <nav class="amount-neighbors" aria-label="他の会社員年収との比較">
+      {prev && <a href={`/hikaku/kaishain-${prev}/`}>← 会社員年収{prev}万円</a>}
+      {next && <a href={`/hikaku/kaishain-${next}/`}>会社員年収{next}万円 →</a>}
+    </nav>
+    <FAQ items={faqs} />
+    <div set:html={renderPR(['soft', 'ideco'])} />
+    <section class="block">
+      <h2>計算の前提と更新日</h2>
+      <p>
+        概算であり、正確な税額を保証しません。東京23区、40歳未満、独身・扶養なし、フリーランスは青色65万円控除と個人事業税ありを想定しています。会社員は協会けんぽ東京と一般の事業の雇用保険で、賞与はないものとして年収を12等分します。年度率を通年適用するため、暦年の実際の天引き額とは異なります。
+      </p>
+      <ul>
+        <li>
+          <a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1410.htm">
+            国税庁：給与所得控除
+          </a>
+        </li>
+        <li>
+          <a href="https://www.kyoukaikenpo.or.jp/about/business/insurance_rate/rate_prefectures/r08/">
+            協会けんぽ：令和8年度の保険料率
+          </a>
+        </li>
+        <li>
+          <a href="https://www.mhlw.go.jp/content/001692566.pdf">
+            厚生労働省：令和8年度の雇用保険料率
+          </a>
+        </li>
+      </ul>
+      <p>
+        最終更新日：<time datetime={contentUpdated}>{contentUpdated}</time>
+      </p>
+    </section>
+  </article>
+  <script>
+    import '../../lib/tools/employee-client';
+  </script>
+</BaseLayout>

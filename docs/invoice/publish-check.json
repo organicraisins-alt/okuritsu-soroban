@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-27T08:45:15.876Z",
+  "origin": "https://okuritsu-soroban.com",
+  "viewports": [
+    375,
+    1280
+  ],
+  "consoleErrors": [],
+  "checks": [
+    "2026 77.5%/140000/141750",
+    "2027 70%/210000",
+    "2028 65%",
+    "ineligible cards omit amounts",
+    "auto/manual year and reload",
+    "base-period5000 limit and comparison guard",
+    "discount0 and sales0",
+    "legacy fragment survives assumptions button",
+    "unknown legacy base-period requires confirmation",
+    "fullwidth/comma normalization",
+    "clipboard UI success/failure (isolated API stub)",
+    "help description/Escape",
+    "mobile result focus",
+    "SVG and six year table",
+    "no placeholders/navigation duplicates",
+    "sibling calculator display"
+  ],
+  "deployment": "https://242b1351.dokuritsu-soroban.pages.dev",
+  "sourceCommit": "e1b26c8",
+  "httpStatus": 200
+}

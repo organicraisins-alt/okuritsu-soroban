@@ -1,0 +1,13 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import { seasonalGuides } from '../../data/seasonal-guides';
+import { guides } from '../../data/guides';
+export function getStaticPaths() {
+  return [...guides, ...seasonalGuides].map((guide) => ({
+    params: { slug: guide.slug },
+    props: { guide },
+  }));
+}
+---
+
+<GuidePage guide={Astro.props.guide} />

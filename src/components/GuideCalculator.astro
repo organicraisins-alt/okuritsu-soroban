@@ -1,0 +1,73 @@
+---
+import AssumptionLinks from './AssumptionLinks.astro';
+import { renderGuideExample } from '../lib/tax/guide';
+const { slug } = Astro.props as { slug: string };
+---
+
+<section class="block" data-guide={slug}>
+  <h2>売上と経費を変えて目安を計算</h2>
+  <form class="guide-calc">
+    <div class="field">
+      <label>
+        年間売上（万円）
+        <input
+          name="sales"
+          type="text"
+          inputmode="decimal"
+          value="800"
+          required
+        />
+      </label>
+    </div>
+    <div class="field">
+      <label>
+        年間経費（万円）
+        <input
+          name="exp"
+          type="text"
+          inputmode="decimal"
+          value="150"
+          required
+        />
+      </label>
+    </div>
+    <button class="btn" type="submit">
+      この条件で計算する
+    </button>
+    <p data-guide-error role="alert" hidden></p>
+  </form>
+  <div
+    data-guide-result
+    set:html={renderGuideExample(slug, 8000000, 1500000)}
+  />
+  <p data-guide-status role="status" class="sr-only"></p>
+  <p class="assumptions">
+    概算・東京23区・40歳未満・単身・扶養なし・青色65万円・事業税あり。前年も同じ所得が続くモデルです。初年度の実請求や消費税を予測するものではありません。
+    <AssumptionLinks />
+  </p>
+</section>
+<script>
+  import { renderGuideExample } from '../lib/tax/guide';
+  import { parseMoney } from '../lib/tools/state';
+  for (const panel of document.querySelectorAll<HTMLElement>('[data-guide]')) {
+    const form = panel.querySelector<HTMLFormElement>('form')!;
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form),
+        sales = parseMoney(String(data.get('sales'))),
+        exp = parseMoney(String(data.get('exp'))),
+        error = panel.querySelector<HTMLElement>('[data-guide-error]')!;
+      if (sales === undefined || exp === undefined) {
+        error.hidden = false;
+        error.textContent =
+          '金額は0〜100,000万円の数値で入力してください。結果は直前の条件のままです。';
+        return;
+      }
+      error.hidden = true;
+      panel.querySelector<HTMLElement>('[data-guide-result]')!.innerHTML =
+        renderGuideExample(panel.dataset.guide!, sales * 10000, exp * 10000);
+      panel.querySelector<HTMLElement>('[data-guide-status]')!.textContent =
+        '計算結果を更新しました。';
+    });
+  }
+</script>

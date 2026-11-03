@@ -1,0 +1,1557 @@
+{
+  "htmlCount": 67,
+  "publicCount": 60,
+  "pages": [
+    {
+      "path": "/404.html",
+      "public": false,
+      "title": "ページが見つかりません｜億率（おくりつ）",
+      "titleLength": 20,
+      "description": "指定されたページは見つかりませんでした。当サイトのホームからご確認ください。",
+      "descriptionLength": 38,
+      "canonical": "https://okuritsu-soroban.com/404/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/about/",
+      "public": true,
+      "title": "運営者情報と計算の確認・更新方針｜億率（おくりつ）",
+      "titleLength": 25,
+      "description": "税金計算システムの構築に携わったエンジニアが運営する億率。税務関連のシステム開発経験、サイト名の由来、公式資料による料率確認、テストと検証、税制改正時の更新方針をご案内します。",
+      "descriptionLength": 88,
+      "canonical": "https://okuritsu-soroban.com/about/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "AboutPage",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/contact/",
+      "public": true,
+      "title": "お問い合わせ｜億率（おくりつ）",
+      "titleLength": 15,
+      "description": "お問い合わせ窓口は現在準備中です。計算の誤りに気づかれた場合の受付方法は、準備ができしだいこのページでお知らせします。",
+      "descriptionLength": 59,
+      "canonical": "https://okuritsu-soroban.com/contact/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/dokuritsu/",
+      "public": true,
+      "title": "会社員から独立する前のお金と手続きの準備｜億率（おくりつ）",
+      "titleLength": 29,
+      "description": "会社員から独立する前に確認したい手取り・住民税・国保・届出を整理。会社員比較、独立1年目、支払いカレンダー、青色申告と任意継続、長期の資産形成へ順に進める入口です。",
+      "descriptionLength": 82,
+      "canonical": "https://okuritsu-soroban.com/dokuritsu/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/guide/dokuritsu-1nenme/",
+      "public": true,
+      "title": "独立1年目のお金の落とし穴と開業時の届出｜億率（おくりつ）",
+      "titleLength": 29,
+      "description": "独立初年度に備える住民税・国保の時間差、開業届と青色申告の申請期限、任意継続、消費税の基準期間を整理。会社員との比較から支払いカレンダーまで、順に確認できます。",
+      "descriptionLength": 80,
+      "canonical": "https://okuritsu-soroban.com/guide/dokuritsu-1nenme/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/guide/juminzei-itsu/",
+      "public": true,
+      "title": "個人事業主の住民税はいつ払う？普通徴収のしくみ｜億率（おくりつ）",
+      "titleLength": 32,
+      "description": "個人事業主の住民税は前年所得をもとに翌年度へ。普通徴収の納期、会社員から独立した年の天引き、年額と分納額の読み方、所得税との違いを試算とともに解説します。",
+      "descriptionLength": 77,
+      "canonical": "https://okuritsu-soroban.com/guide/juminzei-itsu/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/guide/kakutei-shinkoku/",
+      "public": true,
+      "title": "令和8年分の確定申告｜個人事業主の準備と流れ｜億率（おくりつ）",
+      "titleLength": 31,
+      "description": "令和8年分の所得税の申告期間は2027年2月16日〜3月15日。帳簿・決算書・控除証明書・源泉徴収を確認し、e-Tax提出と納付までの流れ、消費税の申告との違いを整理します。",
+      "descriptionLength": 87,
+      "canonical": "https://okuritsu-soroban.com/guide/kakutei-shinkoku/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/guide/keihi/",
+      "public": true,
+      "title": "フリーランスの必要経費と家事按分の考え方｜億率（おくりつ）",
+      "titleLength": 29,
+      "description": "仕事の支出と私用の支出を分ける必要経費の基本。家賃・通信費の家事按分、機材の減価償却、領収書の記録、経費を増やした場合の手取りを共通計算で確認します。",
+      "descriptionLength": 75,
+      "canonical": "https://okuritsu-soroban.com/guide/keihi/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/guide/kojin-jigyouzei/",
+      "public": true,
+      "title": "個人事業税の計算と対象業種・対象外の考え方｜億率（おくりつ）",
+      "titleLength": 30,
+      "description": "個人事業税は肩書だけでは決まりません。法定業種、事業主控除、青色申告との違い、年の途中の開業、納付時期を説明し、対象業種5%のケースを売上と経費から試算します。",
+      "descriptionLength": 80,
+      "canonical": "https://okuritsu-soroban.com/guide/kojin-jigyouzei/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/guide/kokuho-takai/",
+      "public": true,
+      "title": "国保が高い理由と負担を見直す方法｜任意継続と比較｜億率（おくりつ）",
+      "titleLength": 33,
+      "description": "国保が高く感じる理由を前年所得・世帯・上限から整理。減免や軽減の確認、仕事の経費と所得控除の違い、協会けんぽの任意継続との同条件の比較を概算で確認できます。",
+      "descriptionLength": 78,
+      "canonical": "https://okuritsu-soroban.com/guide/kokuho-takai/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/guide/shiharai-calendar/",
+      "public": true,
+      "title": "個人事業主の税金・保険料の支払いカレンダー｜億率（おくりつ）",
+      "titleLength": 30,
+      "description": "所得税・住民税・国保・年金・個人事業税をいつ払うか整理。売上と経費から月別の納付目安を計算し、独立初年度と翌年度の違い、通知書の確認、現金の残し方を解説します。",
+      "descriptionLength": 80,
+      "canonical": "https://okuritsu-soroban.com/guide/shiharai-calendar/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/guide/yotei-nouzei/",
+      "public": true,
+      "title": "予定納税とは？対象・7月と11月の支払いと減額申請｜億率（おくりつ）",
+      "titleLength": 34,
+      "description": "予定納税は前年の所得税をそのまま分割する制度ではありません。予定納税基準額による対象判定、7月・11月の納付、確定申告での精算、減額申請を概算ツールとともに説明します。",
+      "descriptionLength": 84,
+      "canonical": "https://okuritsu-soroban.com/guide/yotei-nouzei/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/guide/zeisei-kaisei-2026/",
+      "public": true,
+      "title": "令和8年の税制・料率更新で手取りはいくら変わる？｜億率（おくりつ）",
+      "titleLength": 33,
+      "description": "利益別に旧プロトタイプと令和8年の現行計算を同じ関数で比較。国保の区分別上限、給与所得控除などの更新を整理し、法改正による差と計算モデルの更新を区別して解説します。",
+      "descriptionLength": 82,
+      "canonical": "https://okuritsu-soroban.com/guide/zeisei-kaisei-2026/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "Article",
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/hikaku/kaishain-1000/",
+      "public": true,
+      "title": "会社員年収1000万円と独立後の手取り比較｜億率（おくりつ）",
+      "titleLength": 30,
+      "description": "会社員年収1000万円の手取り7,272,800円と同じ手残りを目指す売上を試算。経費率20%なら約1,393万円。経費率を変更して税金・社会保険の内訳を比較できます。",
+      "descriptionLength": 84,
+      "canonical": "https://okuritsu-soroban.com/hikaku/kaishain-1000/",
+      "ogImage": "https://okuritsu-soroban.com/og/kaishain-1000.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/hikaku/kaishain-1100/",
+      "public": true,
+      "title": "会社員年収1100万円と独立後の手取り比較｜億率（おくりつ）",
+      "titleLength": 30,
+      "description": "会社員年収1100万円の手取り7,925,500円と同じ手残りを目指す売上を試算。経費率20%なら約1,544.7万円。経費率を変更して税金・社会保険の内訳を比較できます。",
+      "descriptionLength": 86,
+      "canonical": "https://okuritsu-soroban.com/hikaku/kaishain-1100/",
+      "ogImage": "https://okuritsu-soroban.com/og/kaishain-1100.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/hikaku/kaishain-1200/",
+      "public": true,
+      "title": "会社員年収1200万円と独立後の手取り比較｜億率（おくりつ）",
+      "titleLength": 30,
+      "description": "会社員年収1200万円の手取り8,553,700円と同じ手残りを目指す売上を試算。経費率20%なら約1,697.8万円。経費率を変更して税金・社会保険の内訳を比較できます。",
+      "descriptionLength": 86,
+      "canonical": "https://okuritsu-soroban.com/hikaku/kaishain-1200/",
+      "ogImage": "https://okuritsu-soroban.com/og/kaishain-1200.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/hikaku/kaishain-400/",
+      "public": true,
+      "title": "会社員年収400万円と独立後の手取り比較｜億率（おくりつ）",
+      "titleLength": 29,
+      "description": "会社員年収400万円の手取り3,178,000円と同じ手残りを目指す売上を試算。経費率20%なら約526万円。経費率を変更して税金・社会保険の内訳を比較できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/hikaku/kaishain-400/",
+      "ogImage": "https://okuritsu-soroban.com/og/kaishain-400.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/hikaku/kaishain-500/",
+      "public": true,
+      "title": "会社員年収500万円と独立後の手取り比較｜億率（おくりつ）",
+      "titleLength": 29,
+      "description": "会社員年収500万円の手取り3,932,400円と同じ手残りを目指す売上を試算。経費率20%なら約667.7万円。経費率を変更して税金・社会保険の内訳を比較できます。",
+      "descriptionLength": 83,
+      "canonical": "https://okuritsu-soroban.com/hikaku/kaishain-500/",
+      "ogImage": "https://okuritsu-soroban.com/og/kaishain-500.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/hikaku/kaishain-600/",
+      "public": true,
+      "title": "会社員年収600万円と独立後の手取り比較｜億率（おくりつ）",
+      "titleLength": 29,
+      "description": "会社員年収600万円の手取り4,662,000円と同じ手残りを目指す売上を試算。経費率20%なら約835万円。経費率を変更して税金・社会保険の内訳を比較できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/hikaku/kaishain-600/",
+      "ogImage": "https://okuritsu-soroban.com/og/kaishain-600.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/hikaku/kaishain-700/",
+      "public": true,
+      "title": "会社員年収700万円と独立後の手取り比較｜億率（おくりつ）",
+      "titleLength": 29,
+      "description": "会社員年収700万円の手取り5,316,700円と同じ手残りを目指す売上を試算。経費率20%なら約980.3万円。経費率を変更して税金・社会保険の内訳を比較できます。",
+      "descriptionLength": 83,
+      "canonical": "https://okuritsu-soroban.com/hikaku/kaishain-700/",
+      "ogImage": "https://okuritsu-soroban.com/og/kaishain-700.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/hikaku/kaishain-800/",
+      "public": true,
+      "title": "会社員年収800万円と独立後の手取り比較｜億率（おくりつ）",
+      "titleLength": 29,
+      "description": "会社員年収800万円の手取り5,953,300円と同じ手残りを目指す売上を試算。経費率20%なら約1,119.4万円。経費率を変更して税金・社会保険の内訳を比較できます。",
+      "descriptionLength": 85,
+      "canonical": "https://okuritsu-soroban.com/hikaku/kaishain-800/",
+      "ogImage": "https://okuritsu-soroban.com/og/kaishain-800.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/hikaku/kaishain-900/",
+      "public": true,
+      "title": "会社員年収900万円と独立後の手取り比較｜億率（おくりつ）",
+      "titleLength": 29,
+      "description": "会社員年収900万円の手取り6,615,700円と同じ手残りを目指す売上を試算。経費率20%なら約1,259.2万円。経費率を変更して税金・社会保険の内訳を比較できます。",
+      "descriptionLength": 85,
+      "canonical": "https://okuritsu-soroban.com/hikaku/kaishain-900/",
+      "ogImage": "https://okuritsu-soroban.com/og/kaishain-900.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/houjinka/shakai-hoken/",
+      "public": false,
+      "title": "解説準備中：shakai-hoken｜億率（おくりつ）",
+      "titleLength": 27,
+      "description": "この解説ページは準備中です。公開済みの手取り計算と法人化シミュレーターをご利用ください。",
+      "descriptionLength": 44,
+      "canonical": "https://okuritsu-soroban.com/houjinka/shakai-hoken/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/houjinka/timing/",
+      "public": false,
+      "title": "解説準備中：timing｜億率（おくりつ）",
+      "titleLength": 21,
+      "description": "この解説ページは準備中です。公開済みの手取り計算と法人化シミュレーターをご利用ください。",
+      "descriptionLength": 44,
+      "canonical": "https://okuritsu-soroban.com/houjinka/timing/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/houjinka/yakuin-housyu/",
+      "public": false,
+      "title": "解説準備中：yakuin-housyu｜億率（おくりつ）",
+      "titleLength": 28,
+      "description": "この解説ページは準備中です。公開済みの手取り計算と法人化シミュレーターをご利用ください。",
+      "descriptionLength": 44,
+      "canonical": "https://okuritsu-soroban.com/houjinka/yakuin-housyu/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/",
+      "public": true,
+      "title": "フリーランスの手取りと資産形成を計算｜億率（おくりつ）",
+      "titleLength": 27,
+      "description": "フリーランス・個人事業主のお金を数字で比較。手取り計算、法人化シミュレーター、インボイス計算を無料で利用できます。早見表と職業別のモデルケースも掲載。",
+      "descriptionLength": 75,
+      "canonical": "https://okuritsu-soroban.com/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/logic/",
+      "public": true,
+      "title": "計算ロジックと税率・検算データの公開｜億率（おくりつ）",
+      "titleLength": 27,
+      "description": "億率の税金・保険料と資産形成の計算方法を公開。年度パラメータ、公式出典、国保の区分別上限、端数処理、回帰テストの期待値、モンテカルロ法と既知の制約を確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/logic/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/1000/",
+      "public": true,
+      "title": "フリーランス利益1,000万円の手取り｜億率（おくりつ）",
+      "titleLength": 28,
+      "description": "利益1000万円の手取りは年間6,570,960円、月547,580円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 82,
+      "canonical": "https://okuritsu-soroban.com/nenshu/1000/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-1000.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/1100/",
+      "public": true,
+      "title": "フリーランス利益1,100万円の手取り｜億率（おくりつ）",
+      "titleLength": 28,
+      "description": "利益1100万円の手取りは年間7,184,460円、月598,705円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 82,
+      "canonical": "https://okuritsu-soroban.com/nenshu/1100/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-1100.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/1200/",
+      "public": true,
+      "title": "フリーランス利益1,200万円の手取り｜億率（おくりつ）",
+      "titleLength": 28,
+      "description": "利益1200万円の手取りは年間7,742,360円、月645,197円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 82,
+      "canonical": "https://okuritsu-soroban.com/nenshu/1200/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-1200.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/1300/",
+      "public": true,
+      "title": "フリーランス利益1,300万円の手取り｜億率（おくりつ）",
+      "titleLength": 28,
+      "description": "利益1300万円の手取りは年間8,255,360円、月687,947円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 82,
+      "canonical": "https://okuritsu-soroban.com/nenshu/1300/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-1300.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/1400/",
+      "public": true,
+      "title": "フリーランス利益1,400万円の手取り｜億率（おくりつ）",
+      "titleLength": 28,
+      "description": "利益1400万円の手取りは年間8,768,460円、月730,705円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 82,
+      "canonical": "https://okuritsu-soroban.com/nenshu/1400/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-1400.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/1500/",
+      "public": true,
+      "title": "フリーランス利益1,500万円の手取り｜億率（おくりつ）",
+      "titleLength": 28,
+      "description": "利益1500万円の手取りは年間9,281,560円、月773,463円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 82,
+      "canonical": "https://okuritsu-soroban.com/nenshu/1500/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-1500.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/1600/",
+      "public": true,
+      "title": "フリーランス利益1,600万円の手取り｜億率（おくりつ）",
+      "titleLength": 28,
+      "description": "利益1600万円の手取りは年間9,794,660円、月816,222円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 82,
+      "canonical": "https://okuritsu-soroban.com/nenshu/1600/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-1600.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/1700/",
+      "public": true,
+      "title": "フリーランス利益1,700万円の手取り｜億率（おくりつ）",
+      "titleLength": 28,
+      "description": "利益1700万円の手取りは年間10,307,660円、月858,972円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 83,
+      "canonical": "https://okuritsu-soroban.com/nenshu/1700/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-1700.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/1800/",
+      "public": true,
+      "title": "フリーランス利益1,800万円の手取り｜億率（おくりつ）",
+      "titleLength": 28,
+      "description": "利益1800万円の手取りは年間10,820,760円、月901,730円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 83,
+      "canonical": "https://okuritsu-soroban.com/nenshu/1800/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-1800.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/1900/",
+      "public": true,
+      "title": "フリーランス利益1,900万円の手取り｜億率（おくりつ）",
+      "titleLength": 28,
+      "description": "利益1900万円の手取りは年間11,333,860円、月944,488円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 83,
+      "canonical": "https://okuritsu-soroban.com/nenshu/1900/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-1900.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/2000/",
+      "public": true,
+      "title": "フリーランス利益2,000万円の手取り｜億率（おくりつ）",
+      "titleLength": 28,
+      "description": "利益2000万円の手取りは年間11,846,860円、月987,238円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 83,
+      "canonical": "https://okuritsu-soroban.com/nenshu/2000/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-2000.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/300/",
+      "public": true,
+      "title": "フリーランス利益300万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益300万円の手取りは年間2,321,860円、月193,488円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/300/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-300.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/350/",
+      "public": true,
+      "title": "フリーランス利益350万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益350万円の手取りは年間2,676,460円、月223,038円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/350/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-350.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/400/",
+      "public": true,
+      "title": "フリーランス利益400万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益400万円の手取りは年間3,030,960円、月252,580円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/400/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-400.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/450/",
+      "public": true,
+      "title": "フリーランス利益450万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益450万円の手取りは年間3,374,360円、月281,197円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/450/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-450.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/500/",
+      "public": true,
+      "title": "フリーランス利益500万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益500万円の手取りは年間3,706,160円、月308,847円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/500/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-500.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/550/",
+      "public": true,
+      "title": "フリーランス利益550万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益550万円の手取りは年間4,037,960円、月336,497円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/550/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-550.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/600/",
+      "public": true,
+      "title": "フリーランス利益600万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益600万円の手取りは年間4,272,960円、月356,080円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/600/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-600.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/650/",
+      "public": true,
+      "title": "フリーランス利益650万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益650万円の手取りは年間4,559,160円、月379,930円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/650/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-650.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/700/",
+      "public": true,
+      "title": "フリーランス利益700万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益700万円の手取りは年間4,845,260円、月403,772円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/700/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-700.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/750/",
+      "public": true,
+      "title": "フリーランス利益750万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益750万円の手取りは年間5,121,160円、月426,763円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/750/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-750.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/800/",
+      "public": true,
+      "title": "フリーランス利益800万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益800万円の手取りは年間5,407,260円、月450,605円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/800/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-800.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/850/",
+      "public": true,
+      "title": "フリーランス利益850万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益850万円の手取りは年間5,693,360円、月474,447円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/850/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-850.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/900/",
+      "public": true,
+      "title": "フリーランス利益900万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益900万円の手取りは年間5,979,560円、月498,297円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/900/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-900.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/950/",
+      "public": true,
+      "title": "フリーランス利益950万円の手取り｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "利益950万円の手取りは年間6,268,760円、月522,397円が目安です。令和8年の税・保険料の内訳、条件別比較、節税、法人化を具体的な数字で確認できます。",
+      "descriptionLength": 81,
+      "canonical": "https://okuritsu-soroban.com/nenshu/950/",
+      "ogImage": "https://okuritsu-soroban.com/og/nenshu-950.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/nenshu/",
+      "public": true,
+      "title": "フリーランスの利益別手取り早見表｜億率（おくりつ）",
+      "titleLength": 25,
+      "description": "個人事業主の利益300万〜2,000万円の手取りを一覧で比較。令和8年分の税制と令和8年度保険料率で計算し、各金額の内訳・支払いカレンダーへ進めます。",
+      "descriptionLength": 75,
+      "canonical": "https://okuritsu-soroban.com/nenshu/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/okuritsu/",
+      "public": true,
+      "title": "資産1億円への到達割合をシミュレーション｜億率（おくりつ）",
+      "titleLength": 29,
+      "description": "売上・経費から税引後の積立額を計算し、目標年齢までの資産1億円への到達割合を1万回試算。資産推移の幅と、青色申告・掛金・法人化・生活費を変えた差を比較できます。",
+      "descriptionLength": 80,
+      "canonical": "https://okuritsu-soroban.com/okuritsu/",
+      "ogImage": "https://okuritsu-soroban.com/og/okuritsu.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/privacy/",
+      "public": true,
+      "title": "プライバシーポリシー｜億率（おくりつ）",
+      "titleLength": 19,
+      "description": "アクセス解析、広告、Cookie、計算入力と共有URLの取り扱いについて説明します。",
+      "descriptionLength": 42,
+      "canonical": "https://okuritsu-soroban.com/privacy/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/setsuzei/aoiro-65/",
+      "public": false,
+      "title": "解説準備中：aoiro-65｜億率（おくりつ）",
+      "titleLength": 23,
+      "description": "この解説ページは準備中です。公開済みの手取り計算と法人化シミュレーターをご利用ください。",
+      "descriptionLength": 44,
+      "canonical": "https://okuritsu-soroban.com/setsuzei/aoiro-65/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/setsuzei/ideco/",
+      "public": false,
+      "title": "解説準備中：ideco｜億率（おくりつ）",
+      "titleLength": 20,
+      "description": "この解説ページは準備中です。公開済みの手取り計算と法人化シミュレーターをご利用ください。",
+      "descriptionLength": 44,
+      "canonical": "https://okuritsu-soroban.com/setsuzei/ideco/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/setsuzei/shoukibo-kyousai/",
+      "public": false,
+      "title": "解説準備中：shoukibo-kyousai｜億率（おくりつ）",
+      "titleLength": 31,
+      "description": "この解説ページは準備中です。公開済みの手取り計算と法人化シミュレーターをご利用ください。",
+      "descriptionLength": 44,
+      "canonical": "https://okuritsu-soroban.com/setsuzei/shoukibo-kyousai/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/shokugyo/consultant/",
+      "public": true,
+      "title": "コンサルタントの手取り・経費・個人事業税｜億率（おくりつ）",
+      "titleLength": 29,
+      "description": "コンサルタントの売上別の手取りを共通の税計算で試算。経費率は仮定と明記し、個人事業税の扱い、インボイス登録の判断、仕事に使う経費と利益別の比較を紹介します。",
+      "descriptionLength": 78,
+      "canonical": "https://okuritsu-soroban.com/shokugyo/consultant/",
+      "ogImage": "https://okuritsu-soroban.com/og/shokugyo-consultant.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/shokugyo/designer/",
+      "public": true,
+      "title": "Webデザイナーの手取り・経費・個人事業税｜億率（おくりつ）",
+      "titleLength": 30,
+      "description": "Webデザイナーの売上別の手取りを共通の税計算で試算。経費率は仮定と明記し、個人事業税の扱い、インボイス登録の判断、仕事に使う経費と利益別の比較を紹介します。",
+      "descriptionLength": 79,
+      "canonical": "https://okuritsu-soroban.com/shokugyo/designer/",
+      "ogImage": "https://okuritsu-soroban.com/og/shokugyo-designer.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/shokugyo/engineer/",
+      "public": true,
+      "title": "Webエンジニアの手取り・経費・個人事業税｜億率（おくりつ）",
+      "titleLength": 30,
+      "description": "Webエンジニア・プログラマーの売上別の手取りを共通の税計算で試算。経費率は仮定と明記し、個人事業税の扱い、インボイス登録の判断、仕事に使う経費と利益別の比較を紹介します。",
+      "descriptionLength": 86,
+      "canonical": "https://okuritsu-soroban.com/shokugyo/engineer/",
+      "ogImage": "https://okuritsu-soroban.com/og/shokugyo-engineer.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/shokugyo/illustrator/",
+      "public": true,
+      "title": "イラストレーターの手取り・経費・個人事業税｜億率（おくりつ）",
+      "titleLength": 30,
+      "description": "イラストレーターの売上別の手取りを共通の税計算で試算。経費率は仮定と明記し、個人事業税の扱い、インボイス登録の判断、仕事に使う経費と利益別の比較を紹介します。",
+      "descriptionLength": 79,
+      "canonical": "https://okuritsu-soroban.com/shokugyo/illustrator/",
+      "ogImage": "https://okuritsu-soroban.com/og/shokugyo-illustrator.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/shokugyo/video/",
+      "public": true,
+      "title": "動画編集者の手取り・経費・個人事業税｜億率（おくりつ）",
+      "titleLength": 27,
+      "description": "動画編集者の売上別の手取りを共通の税計算で試算。経費率は仮定と明記し、個人事業税の扱い、インボイス登録の判断、仕事に使う経費と利益別の比較を紹介します。",
+      "descriptionLength": 76,
+      "canonical": "https://okuritsu-soroban.com/shokugyo/video/",
+      "ogImage": "https://okuritsu-soroban.com/og/shokugyo-video.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/shokugyo/writer/",
+      "public": true,
+      "title": "ライターの手取り・経費・個人事業税｜億率（おくりつ）",
+      "titleLength": 26,
+      "description": "ライターの売上別の手取りを共通の税計算で試算。経費率は仮定と明記し、個人事業税の扱い、インボイス登録の判断、仕事に使う経費と利益別の比較を紹介します。",
+      "descriptionLength": 75,
+      "canonical": "https://okuritsu-soroban.com/shokugyo/writer/",
+      "ogImage": "https://okuritsu-soroban.com/og/shokugyo-writer.png",
+      "schemaTypes": [
+        "Answer",
+        "BreadcrumbList",
+        "FAQPage",
+        "ListItem",
+        "Organization",
+        "Question",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/tools/houjinka/",
+      "public": true,
+      "title": "法人化シミュレーター｜億率（おくりつ）",
+      "titleLength": 19,
+      "description": "個人事業主のままの場合と法人化した場合を、同じ売上・経費で比較します。役員報酬を調整し、利益ごとの損益分岐も確認できます。",
+      "descriptionLength": 61,
+      "canonical": "https://okuritsu-soroban.com/tools/houjinka/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/tools/invoice/",
+      "public": true,
+      "title": "インボイス計算｜億率（おくりつ）",
+      "titleLength": 16,
+      "description": "2割特例・簡易課税・本則課税の消費税額を試算し、登録する場合と登録しない場合を比べます。基準期間の売上と登録条件を指定し、改正後の特例・経過措置で試算できます。",
+      "descriptionLength": 80,
+      "canonical": "https://okuritsu-soroban.com/tools/invoice/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "path": "/tools/tedori/",
+      "public": true,
+      "title": "フリーランス・個人事業主の手取り計算｜億率（おくりつ）",
+      "titleLength": 27,
+      "description": "売上と経費から、所得税・住民税・国保・年金・個人事業税をまとめて計算。手取りの内訳、支払いカレンダー、節税ヒントも確認できます。",
+      "descriptionLength": 64,
+      "canonical": "https://okuritsu-soroban.com/tools/tedori/",
+      "ogImage": "https://okuritsu-soroban.com/og/default.png",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "ListItem",
+        "Organization",
+        "WebSite"
+      ]
+    }
+  ],
+  "longTitles": [
+    "/guide/kokuho-takai/",
+    "/guide/yotei-nouzei/",
+    "/guide/zeisei-kaisei-2026/"
+  ],
+  "longDescriptions": [],
+  "metaLengths": [
+    {
+      "path": "/404.html",
+      "title": 20,
+      "description": 38
+    },
+    {
+      "path": "/about/",
+      "title": 25,
+      "description": 88
+    },
+    {
+      "path": "/contact/",
+      "title": 15,
+      "description": 59
+    },
+    {
+      "path": "/dokuritsu/",
+      "title": 29,
+      "description": 82
+    },
+    {
+      "path": "/guide/dokuritsu-1nenme/",
+      "title": 29,
+      "description": 80
+    },
+    {
+      "path": "/guide/juminzei-itsu/",
+      "title": 32,
+      "description": 77
+    },
+    {
+      "path": "/guide/kakutei-shinkoku/",
+      "title": 31,
+      "description": 87
+    },
+    {
+      "path": "/guide/keihi/",
+      "title": 29,
+      "description": 75
+    },
+    {
+      "path": "/guide/kojin-jigyouzei/",
+      "title": 30,
+      "description": 80
+    },
+    {
+      "path": "/guide/kokuho-takai/",
+      "title": 33,
+      "description": 78
+    },
+    {
+      "path": "/guide/shiharai-calendar/",
+      "title": 30,
+      "description": 80
+    },
+    {
+      "path": "/guide/yotei-nouzei/",
+      "title": 34,
+      "description": 84
+    },
+    {
+      "path": "/guide/zeisei-kaisei-2026/",
+      "title": 33,
+      "description": 82
+    },
+    {
+      "path": "/hikaku/kaishain-1000/",
+      "title": 30,
+      "description": 84
+    },
+    {
+      "path": "/hikaku/kaishain-1100/",
+      "title": 30,
+      "description": 86
+    },
+    {
+      "path": "/hikaku/kaishain-1200/",
+      "title": 30,
+      "description": 86
+    },
+    {
+      "path": "/hikaku/kaishain-400/",
+      "title": 29,
+      "description": 81
+    },
+    {
+      "path": "/hikaku/kaishain-500/",
+      "title": 29,
+      "description": 83
+    },
+    {
+      "path": "/hikaku/kaishain-600/",
+      "title": 29,
+      "description": 81
+    },
+    {
+      "path": "/hikaku/kaishain-700/",
+      "title": 29,
+      "description": 83
+    },
+    {
+      "path": "/hikaku/kaishain-800/",
+      "title": 29,
+      "description": 85
+    },
+    {
+      "path": "/hikaku/kaishain-900/",
+      "title": 29,
+      "description": 85
+    },
+    {
+      "path": "/houjinka/shakai-hoken/",
+      "title": 27,
+      "description": 44
+    },
+    {
+      "path": "/houjinka/timing/",
+      "title": 21,
+      "description": 44
+    },
+    {
+      "path": "/houjinka/yakuin-housyu/",
+      "title": 28,
+      "description": 44
+    },
+    {
+      "path": "/",
+      "title": 27,
+      "description": 75
+    },
+    {
+      "path": "/logic/",
+      "title": 27,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/1000/",
+      "title": 28,
+      "description": 82
+    },
+    {
+      "path": "/nenshu/1100/",
+      "title": 28,
+      "description": 82
+    },
+    {
+      "path": "/nenshu/1200/",
+      "title": 28,
+      "description": 82
+    },
+    {
+      "path": "/nenshu/1300/",
+      "title": 28,
+      "description": 82
+    },
+    {
+      "path": "/nenshu/1400/",
+      "title": 28,
+      "description": 82
+    },
+    {
+      "path": "/nenshu/1500/",
+      "title": 28,
+      "description": 82
+    },
+    {
+      "path": "/nenshu/1600/",
+      "title": 28,
+      "description": 82
+    },
+    {
+      "path": "/nenshu/1700/",
+      "title": 28,
+      "description": 83
+    },
+    {
+      "path": "/nenshu/1800/",
+      "title": 28,
+      "description": 83
+    },
+    {
+      "path": "/nenshu/1900/",
+      "title": 28,
+      "description": 83
+    },
+    {
+      "path": "/nenshu/2000/",
+      "title": 28,
+      "description": 83
+    },
+    {
+      "path": "/nenshu/300/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/350/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/400/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/450/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/500/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/550/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/600/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/650/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/700/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/750/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/800/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/850/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/900/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/950/",
+      "title": 26,
+      "description": 81
+    },
+    {
+      "path": "/nenshu/",
+      "title": 25,
+      "description": 75
+    },
+    {
+      "path": "/okuritsu/",
+      "title": 29,
+      "description": 80
+    },
+    {
+      "path": "/privacy/",
+      "title": 19,
+      "description": 42
+    },
+    {
+      "path": "/setsuzei/aoiro-65/",
+      "title": 23,
+      "description": 44
+    },
+    {
+      "path": "/setsuzei/ideco/",
+      "title": 20,
+      "description": 44
+    },
+    {
+      "path": "/setsuzei/shoukibo-kyousai/",
+      "title": 31,
+      "description": 44
+    },
+    {
+      "path": "/shokugyo/consultant/",
+      "title": 29,
+      "description": 78
+    },
+    {
+      "path": "/shokugyo/designer/",
+      "title": 30,
+      "description": 79
+    },
+    {
+      "path": "/shokugyo/engineer/",
+      "title": 30,
+      "description": 86
+    },
+    {
+      "path": "/shokugyo/illustrator/",
+      "title": 30,
+      "description": 79
+    },
+    {
+      "path": "/shokugyo/video/",
+      "title": 27,
+      "description": 76
+    },
+    {
+      "path": "/shokugyo/writer/",
+      "title": 26,
+      "description": 75
+    },
+    {
+      "path": "/tools/houjinka/",
+      "title": 19,
+      "description": 61
+    },
+    {
+      "path": "/tools/invoice/",
+      "title": 16,
+      "description": 80
+    },
+    {
+      "path": "/tools/tedori/",
+      "title": 27,
+      "description": 64
+    }
+  ],
+  "duplicateTitles": [],
+  "duplicateDescriptions": [],
+  "brokenLinks": []
+}

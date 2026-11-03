@@ -1,0 +1,142 @@
+---
+import AssumptionLinks from '../../components/AssumptionLinks.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import { jobs, type Job } from '../../data/jobs';
+import { jobExamples } from '../../lib/tax/jobs';
+import { yen, man } from '../../lib/tax/format';
+import { renderPR } from '../../lib/tools/markup';
+export function getStaticPaths() {
+  return jobs.map((job) => ({ params: { slug: job.slug }, props: { job } }));
+}
+const { job } = Astro.props as { job: Job };
+const examples = jobExamples(job);
+const faqs = [
+  {
+    question: `${job.name}の経費率は決まっていますか？`,
+    answer: `このページの${job.expenseRatio * 100}%は試算の仮定で、統計上の平均や税務上認められる一定割合ではありません。実際に仕事のために支出した額で計算してください。`,
+  },
+  {
+    question: '個人事業税は必ずこの扱いになりますか？',
+    answer: job.businessTax,
+  },
+  {
+    question: '売上と利益はどう違いますか？',
+    answer:
+      '売上から仕事の経費を引いた金額が利益です。年収別ページの金額は利益で、下の表の売上とは異なります。',
+  },
+];
+---
+
+<BaseLayout
+  title={`${job.slug === 'engineer' ? 'Webエンジニア' : job.name}の手取り・経費・個人事業税`}
+  description={`${job.name}の売上別の手取りを共通の税計算で試算。経費率は仮定と明記し、個人事業税の扱い、インボイス登録の判断、仕事に使う経費と利益別の比較を紹介します。`}
+  breadcrumbs={[
+    { name: 'ホーム', path: '/' },
+    { name: job.name, path: `/shokugyo/${job.slug}/` },
+  ]}
+>
+  <article class="wrap income-article">
+    <header class="sec-title">
+      <span class="kicker">職業別のお金の見通し</span>
+      <h1>{job.name}の手取りと税金</h1>
+      <p>
+        働き方に合わせて、売上と仕事の支出を分けて考えます。以下は経費率
+        {job.expenseRatio * 100}
+        %を仮定したモデルで、業界平均や報酬相場ではありません。
+      </p>
+    </header>
+    <section class="block">
+      <h2>売上別の手取り</h2>
+      <div
+        class="table-scroll"
+        role="region"
+        aria-label="売上別の手取り表"
+        tabindex="0"
+      >
+        <table class="data">
+          <thead>
+            <tr>
+              <th>売上</th>
+              <th>経費</th>
+              <th>利益</th>
+              <th>年間手取り</th>
+              <th>月あたり</th>
+            </tr>
+          </thead>
+          <tbody>
+            {examples.map((x) => (
+              <tr>
+                <th>{man(x.sales)}</th>
+                <td>{man(x.expenses)}</td>
+                <td>{man(x.result.profit)}</td>
+                <td>{yen(x.result.total)}</td>
+                <td>{yen(x.result.total / 12)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="assumptions">
+        概算であり、正確な税額を保証しません。東京23区・40歳未満・単身・扶養なし・青色申告65万円控除、令和8年分の税・令和8年度の保険料率を使用。消費税や国保の軽減は含みません。
+        <AssumptionLinks />
+      </p>
+      <a
+        href={`/tools/tedori/?sales=${job.sales[0]}&exp=${job.sales[0]! * job.expenseRatio}&jigyo=${job.jigyo ? 1 : 0}`}
+      >
+        この職業の条件を手取り計算で変更する →
+      </a>
+    </section>
+    <section class="block">
+      <h2>よくある仕事の経費</h2>
+      <ul>
+        {job.expenses.map((x) => (
+          <li>{x}</li>
+        ))}
+      </ul>
+      <p>
+        支払っただけで全額が経費になるとは限りません。私用分を分け、仕事との関係を説明できる記録を残します。高額な機材は購入年に全額を引けず、複数年に分ける減価償却が必要な場合があります。
+      </p>
+    </section>
+    <section class="block">
+      <h2>個人事業税の扱い</h2>
+      <p>{job.businessTax}</p>
+      <p>
+        肩書だけで決めず、契約、成果物、著作権の扱いなどを説明して確認しましょう。所得税の青色申告特別控除と、個人事業税の事業主控除は別の仕組みです。
+      </p>
+      <a href="https://www.tax.metro.tokyo.lg.jp/kazei/kojin_ji.html">
+        出典：東京都主税局・個人事業税
+      </a>
+    </section>
+    <section class="block">
+      <h2>インボイス登録を判断するポイント</h2>
+      <p>{job.invoice}</p>
+      <p>
+        消費税を納める義務とインボイス登録の有無は同じではありません。基準期間の売上や例外条件を確認し、取引先との条件変更も含めて考えます。
+      </p>
+      <a href="/tools/invoice/">
+        取引先の割合と課税方法をインボイス計算で比べる →
+      </a>
+    </section>
+    <section class="block">
+      <h2>近い利益の内訳を読む</h2>
+      <p>
+        経費を引いた後の利益が近いページを選んでください。各ページは年額・月額、納付時期、条件別の差を共通計算から表示します。
+      </p>
+      <nav class="guide-nav">
+        {[400, 600, 800, 1200].map((n) => (
+          <a href={`/nenshu/${n}/`}>利益{n}万円の手取り</a>
+        ))}
+      </nav>
+    </section>
+    <FAQ items={faqs} />
+    <Fragment
+      set:html={renderPR(
+        job.sales.at(-1)! >= 800 ? ['tax', 'setup'] : ['soft', 'ideco'],
+      )}
+    />
+    <p class="assumptions">
+      確認・更新：2026年10月26日。業種の最終判断は都道府県税事務所へご確認ください。
+    </p>
+  </article>
+</BaseLayout>

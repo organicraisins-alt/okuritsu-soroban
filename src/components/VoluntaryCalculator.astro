@@ -1,0 +1,70 @@
+---
+import AssumptionLinks from './AssumptionLinks.astro';
+import { voluntaryComparison } from '../lib/tax/comparisons';
+import { yen } from '../lib/tax/format';
+const initial = voluntaryComparison(5000000, 320000, false);
+---
+
+<section class="block" data-voluntary>
+  <h2>国保と協会けんぽ東京の任意継続を比べる</h2>
+  <form class="guide-calc">
+    <label>
+      前年の事業利益（万円）
+      <input name="profit" value="500" inputmode="decimal" />
+    </label>
+    <label>
+      退職時の標準報酬月額（万円）
+      <input name="standard" value="32" inputmode="decimal" />
+    </label>
+    <label>
+      <input name="care" type="checkbox" />
+      40〜64歳（介護分あり）
+    </label>
+    <button class="btn" type="submit">
+      同じ前提で比較
+    </button>
+  </form>
+  <p data-voluntary-error class="input-error" role="alert" hidden></p>
+  <div data-voluntary-result>
+    <p>
+      国保：{yen(initial.nhi)}／任意継続：{yen(initial.voluntary)}（年額概算）
+    </p>
+  </div>
+  <p class="assumptions">
+    単身・青色65万円・協会けんぽ東京、令和8年度率を12か月適用。国保の軽減は未反映。給与所得が基準の独立初年度や扶養家族のいる世帯は、この比較では正確に見積もれません。資格と申出期限は保険者へ確認してください。
+    <AssumptionLinks />
+  </p>
+</section>
+<script>
+  import { voluntaryComparison } from '../lib/tax/comparisons';
+  import { parseMoney } from '../lib/tools/state';
+  import { yen } from '../lib/tax/format';
+  const p = document.querySelector<HTMLElement>('[data-voluntary]');
+  if (p)
+    p.querySelector('form')!.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const d = new FormData(p.querySelector('form')!),
+        profit = parseMoney(String(d.get('profit'))),
+        standard = parseMoney(String(d.get('standard'))),
+        err = p.querySelector<HTMLElement>('[data-voluntary-error]')!;
+      if (profit === undefined || standard === undefined || standard <= 0) {
+        err.hidden = false;
+        err.textContent =
+          '利益は0以上、標準報酬月額は0より大きい数値で入力してください。';
+        return;
+      }
+      try {
+        const r = voluntaryComparison(
+          profit * 10000,
+          standard * 10000,
+          d.has('care'),
+        );
+        err.hidden = true;
+        p.querySelector('[data-voluntary-result]')!.textContent =
+          `国保：${yen(r.nhi)}／任意継続：${yen(r.voluntary)}（年額概算）`;
+      } catch (error) {
+        err.hidden = false;
+        err.textContent = String(error);
+      }
+    });
+</script>

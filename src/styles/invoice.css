@@ -1,0 +1,397 @@
+/* Invoice-specific layout; palette and primitives inherit the approved showroom theme. */
+.invoice-mobile-action {
+  display: none;
+}
+.invoice-results {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+.invoice-verdict {
+  background: var(--take-soft);
+  border-color: transparent;
+  padding: 28px;
+  gap: 12px;
+}
+.invoice-verdict h2 {
+  font-size: 23px;
+}
+.invoice-difference {
+  margin: 0;
+  font-size: 12px;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+}
+.invoice-difference strong {
+  font: 600 clamp(28px, 3vw, 42px) var(--f-num);
+  letter-spacing: -0.04em;
+  color: var(--ai);
+}
+.invoice-verdict > p {
+  margin: 0;
+}
+.inline-source {
+  font-size: 11px;
+  text-underline-offset: 3px;
+}
+.invoice-results .hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+.invoice-results h2 {
+  font-size: 19px;
+}
+.invoice-comparison {
+  align-items: stretch;
+}
+.invoice-comparison .col h3 {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.invoice-comparison .pill {
+  font-size: 10px;
+  white-space: normal;
+}
+.invoice-comparison .col .total {
+  font-size: clamp(21px, 2vw, 28px);
+  color: var(--ai);
+}
+.invoice-flow {
+  font-size: 11px;
+  margin: 0;
+  color: var(--muted);
+}
+.invoice-flow b {
+  display: block;
+  font: 500 15px var(--f-num);
+  color: var(--ink);
+  margin-top: 4px;
+}
+.invoice-thresholds dl {
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+.invoice-thresholds dt {
+  font-size: 12px;
+  color: var(--muted);
+}
+.invoice-thresholds dd {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 4px 0 0;
+}
+.invoice-thresholds p {
+  margin: 0;
+}
+.invoice-results .section-intro {
+  padding: 8px 0 16px;
+}
+.invoice-results .methods {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.invoice-results .method {
+  min-width: 0;
+  gap: 14px;
+  padding: 20px;
+}
+.invoice-results .method h3 {
+  font-size: 16px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.invoice-results .method.off {
+  opacity: 1;
+  background: var(--bg);
+  border-style: dashed;
+}
+.method-ineligible {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--muted);
+  min-height: 3.6em;
+}
+.invoice-results .method .disclosure {
+  background: none;
+}
+.invoice-results .method .disclosure summary {
+  font-size: 11px;
+  padding: 10px;
+}
+.invoice-results .method .disclosure-body {
+  font-size: 12px;
+  padding: 0 10px 12px;
+}
+.invoice-results .method .disclosure-body a {
+  font-size: 11px;
+}
+.invoice-results .method-formula,
+.invoice-results .method-action {
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+.invoice-results .method.best {
+  background: var(--take-soft);
+}
+.invoice-results .method-action {
+  border-top: 1px solid var(--rule);
+  padding-top: 12px;
+}
+.invoice-years {
+  gap: 16px;
+  min-width: 0;
+}
+.invoice-year-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.invoice-year-table th,
+.invoice-year-table td {
+  padding: 14px 8px;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.invoice-year-table td {
+  font-variant-numeric: tabular-nums;
+}
+.invoice-year-table th:first-child {
+  width: 22%;
+}
+.invoice-year-table small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+.invoice-year-table .year-turn {
+  background: var(--accent-soft);
+}
+.invoice-year-table .year-turn th > small:first-child {
+  color: var(--accent);
+  font-weight: 700;
+}
+.invoice-form output {
+  font: 500 24px var(--f-num);
+  color: var(--ai);
+}
+.range-caption {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 12px;
+}
+.threshold-range {
+  position: relative;
+}
+.threshold-range input {
+  display: block;
+  margin-block: 10px;
+}
+.threshold-marker {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  width: 1px;
+  background: var(--accent);
+  pointer-events: none;
+}
+.threshold-marker::before {
+  content: "分岐";
+  position: absolute;
+  bottom: 100%;
+  left: -12px;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.range-ends {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: -4px;
+}
+.invoice-form .effective-ratio {
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+.invoice-form .advanced-fields > .field {
+  gap: 10px;
+}
+.invoice-form .check {
+  font-size: 12px;
+}
+.invoice-form input:disabled {
+  color: var(--muted);
+  background: var(--bg);
+}
+.toast {
+  position: fixed;
+  z-index: 30;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100vw - 40px);
+  width: max-content;
+  background: var(--ai);
+  color: var(--paper);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  box-shadow: 0 8px 24px #083b4320;
+}
+@media (max-width: 700px) {
+  .invoice-mobile-action {
+    display: inline;
+  }
+  .invoice-desktop-action {
+    display: none;
+  }
+  .invoice-verdict {
+    padding: 22px;
+  }
+  .invoice-verdict h2 {
+    font-size: 21px;
+  }
+  .invoice-difference strong {
+    font-size: 34px;
+  }
+  .invoice-comparison {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .invoice-results .methods {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .invoice-year-table,
+  .invoice-year-table tbody {
+    display: block;
+  }
+  .invoice-year-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .invoice-year-table tr {
+    display: grid;
+    gap: 10px;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  .invoice-year-table th,
+  .invoice-year-table td {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0;
+    border: 0;
+    width: auto !important;
+  }
+  .invoice-year-table th {
+    align-items: baseline;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+  .invoice-year-table th small {
+    margin: 0;
+    font-size: 10px;
+  }
+  .invoice-year-table td {
+    flex-wrap: wrap;
+  }
+  .invoice-year-table td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-size: 11px;
+    margin-right: auto;
+  }
+  .invoice-year-table td small {
+    flex-basis: 100%;
+    text-align: right;
+    margin: 0;
+  }
+  .invoice-results .block {
+    padding: 20px;
+  }
+  .invoice-form select {
+    max-width: 100%;
+    width: 100%;
+    font-size: 13px;
+  }
+}
+.reveal-assumptions {
+  appearance: none;
+  border: 0;
+  background: none;
+  color: var(--ai);
+  text-decoration: underline;
+  padding: 0;
+  text-align: left;
+  justify-self: start;
+}
+.invoice-year-chart {
+  margin: 4px 0 16px;
+}
+.invoice-year-chart svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.invoice-year-chart text {
+  font-family: var(--f-num);
+  font-size: 12px;
+  fill: var(--muted);
+}
+.invoice-year-chart .turn-label {
+  font-family: var(--f-body);
+  font-size: 10px;
+  fill: var(--accent);
+  font-weight: 700;
+}
+.invoice-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-bottom: 12px;
+  font-size: 11px;
+}
+.invoice-chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.invoice-chart-legend i {
+  width: 10px;
+  height: 10px;
+  background: var(--ai);
+}
+.invoice-chart-legend i.unregistered {
+  background: var(--accent);
+}
+.invoice-year-chart figcaption {
+  font-size: 11px;
+  color: var(--muted);
+}

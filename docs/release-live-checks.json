@@ -1,0 +1,146 @@
+{
+  "checkedAt": "2026-10-27T08:45:03.877Z",
+  "origin": "https://okuritsu-soroban.com",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "newContent": true
+    },
+    {
+      "path": "/okuritsu/",
+      "status": 200,
+      "newContent": true
+    },
+    {
+      "path": "/dokuritsu/",
+      "status": 200,
+      "newContent": true
+    },
+    {
+      "path": "/about/",
+      "status": 200,
+      "newContent": true
+    },
+    {
+      "path": "/logic/",
+      "status": 200,
+      "newContent": true
+    }
+  ],
+  "about": {
+    "noVisibleTodo": true,
+    "noEmptyFields": true,
+    "noContactOrSupervisorField": true,
+    "type": "AboutPage",
+    "publisher": "億率",
+    "noPerson": true
+  },
+  "sitemap": {
+    "indexStatus": 200,
+    "children": [
+      "https://okuritsu-soroban.com/sitemap-0.xml"
+    ],
+    "count": 60,
+    "stubsExcluded": true,
+    "urls": [
+      "https://okuritsu-soroban.com/",
+      "https://okuritsu-soroban.com/about/",
+      "https://okuritsu-soroban.com/contact/",
+      "https://okuritsu-soroban.com/dokuritsu/",
+      "https://okuritsu-soroban.com/guide/dokuritsu-1nenme/",
+      "https://okuritsu-soroban.com/guide/juminzei-itsu/",
+      "https://okuritsu-soroban.com/guide/kakutei-shinkoku/",
+      "https://okuritsu-soroban.com/guide/keihi/",
+      "https://okuritsu-soroban.com/guide/kojin-jigyouzei/",
+      "https://okuritsu-soroban.com/guide/kokuho-takai/",
+      "https://okuritsu-soroban.com/guide/shiharai-calendar/",
+      "https://okuritsu-soroban.com/guide/yotei-nouzei/",
+      "https://okuritsu-soroban.com/guide/zeisei-kaisei-2026/",
+      "https://okuritsu-soroban.com/hikaku/kaishain-400/",
+      "https://okuritsu-soroban.com/hikaku/kaishain-500/",
+      "https://okuritsu-soroban.com/hikaku/kaishain-600/",
+      "https://okuritsu-soroban.com/hikaku/kaishain-700/",
+      "https://okuritsu-soroban.com/hikaku/kaishain-800/",
+      "https://okuritsu-soroban.com/hikaku/kaishain-900/",
+      "https://okuritsu-soroban.com/hikaku/kaishain-1000/",
+      "https://okuritsu-soroban.com/hikaku/kaishain-1100/",
+      "https://okuritsu-soroban.com/hikaku/kaishain-1200/",
+      "https://okuritsu-soroban.com/logic/",
+      "https://okuritsu-soroban.com/nenshu/",
+      "https://okuritsu-soroban.com/nenshu/300/",
+      "https://okuritsu-soroban.com/nenshu/350/",
+      "https://okuritsu-soroban.com/nenshu/400/",
+      "https://okuritsu-soroban.com/nenshu/450/",
+      "https://okuritsu-soroban.com/nenshu/500/",
+      "https://okuritsu-soroban.com/nenshu/550/",
+      "https://okuritsu-soroban.com/nenshu/600/",
+      "https://okuritsu-soroban.com/nenshu/650/",
+      "https://okuritsu-soroban.com/nenshu/700/",
+      "https://okuritsu-soroban.com/nenshu/750/",
+      "https://okuritsu-soroban.com/nenshu/800/",
+      "https://okuritsu-soroban.com/nenshu/850/",
+      "https://okuritsu-soroban.com/nenshu/900/",
+      "https://okuritsu-soroban.com/nenshu/950/",
+      "https://okuritsu-soroban.com/nenshu/1000/",
+      "https://okuritsu-soroban.com/nenshu/1100/",
+      "https://okuritsu-soroban.com/nenshu/1200/",
+      "https://okuritsu-soroban.com/nenshu/1300/",
+      "https://okuritsu-soroban.com/nenshu/1400/",
+      "https://okuritsu-soroban.com/nenshu/1500/",
+      "https://okuritsu-soroban.com/nenshu/1600/",
+      "https://okuritsu-soroban.com/nenshu/1700/",
+      "https://okuritsu-soroban.com/nenshu/1800/",
+      "https://okuritsu-soroban.com/nenshu/1900/",
+      "https://okuritsu-soroban.com/nenshu/2000/",
+      "https://okuritsu-soroban.com/okuritsu/",
+      "https://okuritsu-soroban.com/privacy/",
+      "https://okuritsu-soroban.com/shokugyo/consultant/",
+      "https://okuritsu-soroban.com/shokugyo/designer/",
+      "https://okuritsu-soroban.com/shokugyo/engineer/",
+      "https://okuritsu-soroban.com/shokugyo/illustrator/",
+      "https://okuritsu-soroban.com/shokugyo/video/",
+      "https://okuritsu-soroban.com/shokugyo/writer/",
+      "https://okuritsu-soroban.com/tools/houjinka/",
+      "https://okuritsu-soroban.com/tools/invoice/",
+      "https://okuritsu-soroban.com/tools/tedori/"
+    ]
+  },
+  "stubs": [
+    {
+      "path": "/houjinka/timing/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "path": "/houjinka/yakuin-housyu/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "path": "/houjinka/shakai-hoken/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "path": "/setsuzei/aoiro-65/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "path": "/setsuzei/shoukibo-kyousai/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "path": "/setsuzei/ideco/",
+      "status": 200,
+      "noindex": true
+    }
+  ],
+  "redirects": {
+    "bundled": true,
+    "uploadConfirmed": "Wrangler: Uploading _redirects",
+    "wwwTest": "not requested this run"
+  }
+}

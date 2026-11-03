@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const entries = [
+  {
+    href: '/hikaku/kaishain-600/',
+    title: '会社員年収600万円と同じ手取りに必要な売上',
+    body: '額面年収と売上を直接比べず、経費と税・保険料を引いた手残りで比べます。400万〜1200万円の比較ページも用意しています。',
+  },
+  {
+    href: '/guide/dokuritsu-1nenme/',
+    title: '独立1年目のお金の落とし穴',
+    body: '前年の給与による住民税や国保、入金と利益の違いを確認します。初年度と二年目を分けて資金を準備しましょう。',
+  },
+  {
+    href: '/guide/shiharai-calendar/',
+    title: '税金・保険料の支払いカレンダー',
+    body: '年間の負担だけでなく、まとまった支出が発生する月を確認できます。通知書が届いたら予定額を置き換えます。',
+  },
+  {
+    href: '/guide/dokuritsu-1nenme/#opening',
+    title: '開業届・青色申告の申請期限',
+    body: '開業届と青色申告承認申請は別の手続きです。2026年の開業届期限の変更と、青色申告の期限を分けて確認します。',
+  },
+  {
+    href: '/guide/kokuho-takai/',
+    title: '退職後の国保と任意継続の比較',
+    body: '前年所得、退職前の標準報酬月額、保険者、家族構成をそろえて比較します。任意継続の申出期限にも注意が必要です。',
+  },
+  {
+    href: '/okuritsu/',
+    title: '手取りから資産形成の億率を考える',
+    body: '生活費と納付資金を把握したら、長期の積立を試算します。利回りは利用者の仮定で、将来の運用成果を保証しません。',
+  },
+];
+---
+
+<BaseLayout
+  title="会社員から独立するには？お金と手続きの準備"
+  description="会社員から独立する前に確認したい手取り・住民税・国保・届出を整理。会社員比較、独立1年目、支払いカレンダー、青色申告と任意継続、長期の資産形成へ順に進める入口です。"
+  breadcrumbs={[
+    { name: 'ホーム', path: '/' },
+    { name: 'これから独立する人へ', path: '/dokuritsu/' },
+  ]}
+>
+  <article class="wrap income-article">
+    <header class="sec-title">
+      <span class="kicker">これから独立する人へ</span>
+      <h1>会社員から独立する前に知っておきたいお金のこと</h1>
+      <p>
+        最初に確かめたいのは、売上の目標だけではありません。毎月の生活費、税金を払う時期、退職後の保険と届出を整理してから、働き方を比べましょう。
+      </p>
+    </header>
+    {entries.map((e, i) => (
+      <section class="block">
+        <span class="kicker">STEP {i + 1}</span>
+        <h2>
+          <a href={e.href}>{e.title}</a>
+        </h2>
+        <p>{e.body}</p>
+      </section>
+    ))}
+    <section class="block">
+      <h2>条件を揃えて比較する</h2>
+      <p>
+        会社員の手取りと個人事業主の手取りが同じでも、有給休暇、退職金、年金、営業費用は同じになりません。売上が入るまでの期間と、仕事が途切れた場合の生活資金も考えてください。
+      </p>
+      <p>
+        この記事は独立の可否を決めるものではありません。ご自身の状況を整理し、制度の適用や個別の申告は公的窓口や専門家へ確認しましょう。
+      </p>
+    </section>
+  </article>
+</BaseLayout>

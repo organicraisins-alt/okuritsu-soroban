@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-27T04:38:07.772Z",
+  "origin": "https://okuritsu-soroban.com",
+  "deployment": "https://1e765542.dokuritsu-soroban.pages.dev",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "overflow": false,
+      "newPalette": true
+    },
+    {
+      "path": "/tools/tedori/",
+      "status": 200,
+      "overflow": false,
+      "newPalette": true
+    },
+    {
+      "path": "/tools/houjinka/",
+      "status": 200,
+      "overflow": false,
+      "newPalette": true
+    },
+    {
+      "path": "/tools/invoice/",
+      "status": 200,
+      "overflow": false,
+      "newPalette": true
+    },
+    {
+      "path": "/okuritsu/",
+      "status": 200,
+      "overflow": false,
+      "newPalette": true
+    }
+  ],
+  "consoleErrors": [],
+  "liveCalculationAndHelp": true
+}

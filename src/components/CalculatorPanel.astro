@@ -1,0 +1,35 @@
+---
+import ToolForm from './ToolForm.astro';
+import InvoiceForm from './InvoiceForm.astro';
+import { defaults, type ToolKind } from '../lib/tools/state';
+import { renderTool } from '../lib/tools/render';
+interface Props {
+  kind: ToolKind;
+}
+const { kind } = Astro.props;
+---
+
+<section class="panel" data-tool={kind}>
+  <div class="wrap tool">
+    {kind === 'invoice' ? <InvoiceForm /> : <ToolForm kind={kind} />}
+    <div
+      class="result"
+      id="tool-result"
+      role={kind === 'invoice' ? 'region' : undefined}
+      aria-label={kind === 'invoice' ? '計算結果' : undefined}
+      tabindex={kind === 'invoice' ? '-1' : undefined}
+      set:html={renderTool(kind, defaults[kind])}
+    />
+  </div>
+  <p
+    class="wrap sr-only"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+    id="result-status"
+  ></p>
+</section>
+<script>
+  import { initTool } from '../lib/tools/client';
+  initTool();
+</script>

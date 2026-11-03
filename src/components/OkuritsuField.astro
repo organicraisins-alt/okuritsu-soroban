@@ -1,0 +1,30 @@
+---
+import Help from './Help.astro';
+import { defaults, type OkuritsuInput } from '../lib/okuritsu/model';
+interface Props {
+  field: {
+    key: keyof OkuritsuInput;
+    label: string;
+    scale: number;
+    step: string;
+    help?: string;
+  };
+}
+const { field: f } = Astro.props;
+---
+
+<div class="field">
+  <div class="field-label">
+    <label for={`oku-${f.key}`}>{f.label}</label>
+    {f.help && <Help id={`oku-${f.key}-help`} label={f.label} text={f.help} />}
+  </div>
+  <input
+    id={`oku-${f.key}`}
+    data-oku={f.key}
+    data-scale={f.scale}
+    type="text"
+    inputmode="decimal"
+    value={defaults[f.key] / f.scale}
+    required
+  />
+</div>

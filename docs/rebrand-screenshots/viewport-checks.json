@@ -1,0 +1,514 @@
+{
+  "viewport": 375,
+  "pages": [
+    {
+      "nextReads": 3,
+      "path": "/404.html",
+      "scrollWidth": 361,
+      "title": "ページが見つかりません｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/about/",
+      "scrollWidth": 361,
+      "title": "運営者情報と計算の確認・更新方針｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/contact/",
+      "scrollWidth": 361,
+      "title": "お問い合わせ｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/dokuritsu/",
+      "scrollWidth": 361,
+      "title": "会社員から独立する前のお金と手続きの準備｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/guide/dokuritsu-1nenme/",
+      "scrollWidth": 361,
+      "title": "独立1年目のお金の落とし穴と開業時の届出｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/guide/juminzei-itsu/",
+      "scrollWidth": 361,
+      "title": "個人事業主の住民税はいつ払う？普通徴収のしくみ｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/guide/kakutei-shinkoku/",
+      "scrollWidth": 361,
+      "title": "令和8年分の確定申告｜個人事業主の準備と流れ｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/guide/keihi/",
+      "scrollWidth": 361,
+      "title": "フリーランスの必要経費と家事按分の考え方｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/guide/kojin-jigyouzei/",
+      "scrollWidth": 361,
+      "title": "個人事業税の計算と対象業種・対象外の考え方｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/guide/kokuho-takai/",
+      "scrollWidth": 361,
+      "title": "国保が高い理由と負担を見直す方法｜任意継続と比較｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/guide/shiharai-calendar/",
+      "scrollWidth": 361,
+      "title": "個人事業主の税金・保険料の支払いカレンダー｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/guide/yotei-nouzei/",
+      "scrollWidth": 361,
+      "title": "予定納税とは？対象・7月と11月の支払いと減額申請｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/guide/zeisei-kaisei-2026/",
+      "scrollWidth": 361,
+      "title": "令和8年の税制・料率更新で手取りはいくら変わる？｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/hikaku/kaishain-1000/",
+      "scrollWidth": 361,
+      "title": "会社員年収1000万円と独立後の手取り比較｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/hikaku/kaishain-1100/",
+      "scrollWidth": 361,
+      "title": "会社員年収1100万円と独立後の手取り比較｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/hikaku/kaishain-1200/",
+      "scrollWidth": 361,
+      "title": "会社員年収1200万円と独立後の手取り比較｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/hikaku/kaishain-400/",
+      "scrollWidth": 361,
+      "title": "会社員年収400万円と独立後の手取り比較｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/hikaku/kaishain-500/",
+      "scrollWidth": 361,
+      "title": "会社員年収500万円と独立後の手取り比較｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/hikaku/kaishain-600/",
+      "scrollWidth": 361,
+      "title": "会社員年収600万円と独立後の手取り比較｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/hikaku/kaishain-700/",
+      "scrollWidth": 361,
+      "title": "会社員年収700万円と独立後の手取り比較｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/hikaku/kaishain-800/",
+      "scrollWidth": 361,
+      "title": "会社員年収800万円と独立後の手取り比較｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/hikaku/kaishain-900/",
+      "scrollWidth": 361,
+      "title": "会社員年収900万円と独立後の手取り比較｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/houjinka/shakai-hoken/",
+      "scrollWidth": 361,
+      "title": "解説準備中：shakai-hoken｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/houjinka/timing/",
+      "scrollWidth": 361,
+      "title": "解説準備中：timing｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/houjinka/yakuin-housyu/",
+      "scrollWidth": 361,
+      "title": "解説準備中：yakuin-housyu｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/",
+      "scrollWidth": 361,
+      "title": "フリーランスの手取りと資産形成を計算｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/logic/",
+      "scrollWidth": 361,
+      "title": "計算ロジックと税率・検算データの公開｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/1000/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益1,000万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/1100/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益1,100万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/1200/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益1,200万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/1300/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益1,300万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/1400/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益1,400万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/1500/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益1,500万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/1600/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益1,600万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/1700/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益1,700万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/1800/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益1,800万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/1900/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益1,900万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/2000/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益2,000万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/300/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益300万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/350/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益350万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/400/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益400万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/450/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益450万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/500/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益500万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/550/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益550万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/600/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益600万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/650/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益650万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/700/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益700万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/750/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益750万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/800/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益800万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/850/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益850万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/900/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益900万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/950/",
+      "scrollWidth": 361,
+      "title": "フリーランス利益950万円の手取り｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/nenshu/",
+      "scrollWidth": 361,
+      "title": "フリーランスの利益別手取り早見表｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/okuritsu/",
+      "scrollWidth": 361,
+      "title": "資産1億円への到達割合をシミュレーション｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/privacy/",
+      "scrollWidth": 361,
+      "title": "プライバシーポリシー｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/setsuzei/aoiro-65/",
+      "scrollWidth": 361,
+      "title": "解説準備中：aoiro-65｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/setsuzei/ideco/",
+      "scrollWidth": 361,
+      "title": "解説準備中：ideco｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/setsuzei/shoukibo-kyousai/",
+      "scrollWidth": 361,
+      "title": "解説準備中：shoukibo-kyousai｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/shokugyo/consultant/",
+      "scrollWidth": 361,
+      "title": "コンサルタントの手取り・経費・個人事業税｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/shokugyo/designer/",
+      "scrollWidth": 361,
+      "title": "Webデザイナーの手取り・経費・個人事業税｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/shokugyo/engineer/",
+      "scrollWidth": 361,
+      "title": "Webエンジニアの手取り・経費・個人事業税｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/shokugyo/illustrator/",
+      "scrollWidth": 361,
+      "title": "イラストレーターの手取り・経費・個人事業税｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/shokugyo/video/",
+      "scrollWidth": 361,
+      "title": "動画編集者の手取り・経費・個人事業税｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/shokugyo/writer/",
+      "scrollWidth": 361,
+      "title": "ライターの手取り・経費・個人事業税｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/tools/houjinka/",
+      "scrollWidth": 361,
+      "title": "法人化シミュレーター｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/tools/invoice/",
+      "scrollWidth": 365,
+      "title": "インボイス計算｜億率（おくりつ）",
+      "width": 375
+    },
+    {
+      "nextReads": 3,
+      "path": "/tools/tedori/",
+      "scrollWidth": 361,
+      "title": "フリーランス・個人事業主の手取り計算｜億率（おくりつ）",
+      "width": 375
+    }
+  ],
+  "examples": [
+    {
+      "flow": [
+        "3,706,160円",
+        "706,160円",
+        "706,160円"
+      ],
+      "median": "あなたの億率2.7%60歳までに一度でも資産1億円に届いた試行の割合です（10,000回）。60歳時点の中央値：34,513,923円シミュレーションであり、将来の運用成果を保証するものではありません。投資の判断はご自身で行ってください",
+      "probability": "2.7%",
+      "sales": "500",
+      "status": "億率を更新しました。計算時間27ミリ秒。"
+    },
+    {
+      "flow": [
+        "5,407,260円",
+        "2,407,260円",
+        "2,407,260円"
+      ],
+      "median": "あなたの億率71.0%60歳までに一度でも資産1億円に届いた試行の割合です（10,000回）。中央値の線が1億円に届く年齢：57歳シミュレーションであり、将来の運用成果を保証するものではありません。投資の判断はご自身で行ってください",
+      "probability": "71.0%",
+      "sales": "800",
+      "status": "億率を更新しました。計算時間28ミリ秒。"
+    },
+    {
+      "flow": [
+        "7,742,360円",
+        "4,742,360円",
+        "4,742,360円"
+      ],
+      "median": "あなたの億率98.9%60歳までに一度でも資産1億円に届いた試行の割合です（10,000回）。中央値の線が1億円に届く年齢：47歳シミュレーションであり、将来の運用成果を保証するものではありません。投資の判断はご自身で行ってください",
+      "probability": "98.9%",
+      "sales": "1200",
+      "status": "億率を更新しました。計算時間25ミリ秒。"
+    }
+  ],
+  "longestPeriod": {
+    "scrollWidth": 361,
+    "status": "億率を更新しました。計算時間65ミリ秒。",
+    "width": 375
+  }
+}

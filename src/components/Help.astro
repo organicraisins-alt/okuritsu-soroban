@@ -1,0 +1,11 @@
+---
+import { helpMarkup } from '../lib/ui/markup';
+interface Props {
+  id: string;
+  label: string;
+  text: string;
+}
+const { id, label, text } = Astro.props;
+---
+
+<Fragment set:html={helpMarkup(id, label, text)} />

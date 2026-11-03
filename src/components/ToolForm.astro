@@ -1,0 +1,178 @@
+---
+import { defaults, type ToolKind } from '../lib/tools/state';
+import { describeConditions } from '../lib/ui/conditions';
+import Help from './Help.astro';
+import MoneyField from './MoneyField.astro';
+interface Props {
+  kind: Exclude<ToolKind, 'invoice'>;
+}
+const { kind } = Astro.props;
+const initial = defaults[kind],
+  prefix = kind === 'tedori' ? 'th' : 'co';
+---
+
+<form
+  class="form"
+  id="tool-form"
+  data-kind={kind}
+  novalidate
+  autocomplete="off"
+>
+  <div class="form-heading">
+    <span class="section-label">あなたの条件</span>
+    <h2>年間の数字を入力</h2>
+  </div>
+  <p class="input-error" id="form-error" role="alert" hidden></p>
+  <MoneyField
+    id={`${prefix}-sales`}
+    name="sales"
+    label="売上"
+    value={initial.sales}
+    help="1年間に仕事で受け取る売上の合計です。利益や手取りとは異なります。"
+  />
+  <MoneyField
+    id={`${prefix}-exp`}
+    name="exp"
+    label="経費"
+    value={initial.exp}
+    help="PC・通信費・家賃の事業使用分・外注費など、仕事のために使った費用です。"
+  />
+  <p class="conditions-preview" data-condition-summary>
+    {describeConditions(kind, initial)}
+  </p>
+  <details class="advanced-options" id="additional-conditions">
+    <summary>
+      計算条件を変更
+      <span class="disclosure-icon" aria-hidden="true">
+        ＋
+      </span>
+    </summary>
+    <div class="advanced-fields">
+      <div class="field">
+        <div class="field-label">
+          <label for={`${prefix}-blue`}>申告の方法</label>
+          <Help
+            id={`${prefix}-blue-help`}
+            label="申告の方法"
+            text="65万円控除には、複式簿記での記帳とe-Taxでの申告などの条件があります。ご自身の申告方法を選んでください。"
+          />
+        </div>
+        <select id={`${prefix}-blue`} name="blue" data-key="blue">
+          <option value="650000">青色申告・65万円控除</option>
+          <option value="100000">青色申告・10万円控除</option>
+          <option value="0">白色申告</option>
+        </select>
+      </div>
+      {kind === 'tedori' && (
+        <MoneyField
+          id="th-extra"
+          name="extra"
+          label="iDeCo・共済の年間掛金"
+          value={initial.extra}
+          help="掛金は所得控除に反映します。表示の手取りは掛金支出前です。将来の資産になる掛金を、追加の収入として加算するものではありません。"
+        />
+      )}
+      {kind === 'houjinka' && (
+        <>
+          <div class="field">
+            <div class="field-label">
+              <span class="lbl">役員報酬の決め方</span>
+              <Help
+                id="co-mode-help"
+                label="役員報酬"
+                text="自分への給料と会社に残す資金の配分で税額が変わります。「自動で比較」は最終的な個人の手残りが多い報酬を探索します。"
+              />
+            </div>
+            <div class="seg" role="radiogroup" aria-label="役員報酬の決め方">
+              <label>
+                <input
+                  type="radio"
+                  name="mode"
+                  data-key="mode"
+                  value="auto"
+                  checked
+                />
+                <span>自動で比較</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="mode"
+                  data-key="mode"
+                  value="manual"
+                />
+                <span>自分で決める</span>
+              </label>
+            </div>
+            <div id="co-manual" hidden>
+              <input
+                type="range"
+                id="co-salary"
+                name="salary"
+                data-key="salary"
+                min="0"
+                max="1500"
+                step="12"
+                value="600"
+                aria-label="役員報酬（万円）"
+              />
+              <span class="hint">
+                年{' '}
+                <b class="num" id="co-salary-v">
+                  600
+                </b>{' '}
+                万円（月{' '}
+                <span class="num" id="co-salary-m">
+                  50
+                </span>{' '}
+                万円）
+              </span>
+            </div>
+          </div>
+          <MoneyField
+            id="co-fee"
+            name="fee"
+            label="税理士費用（法人のみ）"
+            value={initial.fee}
+            help="法人の維持費として見込む年間の税理士費用です。ご自身の見積もりに合わせて変更できます。設立費用は含みません。"
+          />
+        </>
+      )}
+      <label class="check">
+        <input
+          type="checkbox"
+          id={`${prefix}-age`}
+          name="age40"
+          data-key="age40"
+        />
+        <span>40〜64歳（介護保険料を含む）</span>
+      </label>
+      <label class="check">
+        <input
+          type="checkbox"
+          id={`${prefix}-jigyo`}
+          name="jigyo"
+          data-key="jigyo"
+          checked
+        />
+        <span>個人事業税の対象業種</span>
+      </label>
+      <p class="hint">
+        個人事業税の対象は仕事内容によって異なります。都道府県税事務所で確認してください。
+      </p>
+    </div>
+  </details>
+  <button class="btn primary calculate-button" type="submit">
+    この条件で計算する <span aria-hidden="true">→</span>
+  </button>
+  <p class="form-assist">入力を変えると、自動でも更新されます。</p>
+  <button class="share-btn" type="button" data-share>
+    この条件のURLをコピー
+  </button>
+  <p class="share-status" data-share-status></p>
+  <noscript>
+    <p>
+      条件を変えるにはJavaScriptを有効にしてください。表示中は入力例の計算結果です。
+    </p>
+  </noscript>
+</form>

@@ -1,0 +1,28 @@
+<section class="wrap checklist-section" aria-labelledby="check-title">
+  <div class="block">
+    <h2 id="check-title">法人化チェックリスト</h2>
+    <p>
+      数字の損得だけでなく、次の項目にいくつ当てはまるかも判断材料になります。
+    </p>
+    <ul class="checklist" id="checklist">
+      {[
+        '利益（売上−経費）が600万円を超えている、または来年超える見込み',
+        '2年前の売上が1,000万円を超え、消費税の納税が始まる',
+        '取引先から法人でないと契約しにくいと言われたことがある',
+        '家族に給料を払って所得を分けたい',
+        '将来の年金を厚生年金で増やしたい',
+        '毎月の役員報酬を決めて、生活費と事業のお金を分けられる',
+      ].map((text, i) => (
+        <li>
+          <label>
+            <input type="checkbox" name={`check-${i}`} />
+            <span>{text}</span>
+          </label>
+        </li>
+      ))}
+    </ul>
+    <p id="check-score" class="check-score" role="status">
+      当てはまる項目にチェックしてください。
+    </p>
+  </div>
+</section>

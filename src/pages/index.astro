@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import OkuritsuCalculator from '../components/OkuritsuCalculator.astro';
+import ToolNav from '../components/ToolNav.astro';
+import ProductHero from '../components/ProductHero.astro';
+import CalculatorPanel from '../components/CalculatorPanel.astro';
+import { sole } from '../lib/tax/sole';
+import { employeeEquivalent } from '../lib/tax/employee';
+import { yen, man } from '../lib/tax/format';
+import { modelCases } from '../data/jobs';
+import { defaults, serializeState } from '../lib/tools/state';
+const options = { blue: 650000, age40: false, jigyo: true, extra: 0 };
+const profits = [300, 400, 500, 600, 800, 1000];
+const tools = [
+  {
+    slug: 'tedori',
+    title: '手取り計算',
+    question: '結局いくら残る？',
+    body: '売上と経費から、税金・国保・年金を払った後の手取りを計算。支払いカレンダーと節税ヒントも見られます。',
+    cta: '手取りを計算する',
+  },
+  {
+    slug: 'houjinka',
+    title: '法人化シミュレーター',
+    question: '会社にしたら得？',
+    body: '個人事業主と法人の手残りを比較。役員報酬を自分で調整し、利益ごとの損益分岐を確認できます。',
+    cta: '法人化を比べる',
+  },
+  {
+    slug: 'invoice',
+    title: 'インボイス計算',
+    question: '登録すべき？',
+    body: '消費税の計算方法と、登録する・しない場合を比較。取引先や経費の条件を変えて試算できます。',
+    cta: 'インボイスを試算する',
+  },
+];
+---
+
+<BaseLayout
+  title="フリーランスの手取り・法人化・資産形成を無料計算"
+  description="フリーランス・個人事業主のお金を数字で比較。手取り計算、法人化シミュレーター、インボイス計算を無料で利用できます。早見表と職業別のモデルケースも掲載。"
+>
+  <ProductHero />
+  <section
+    class="home-calculator"
+    id="calculator"
+    aria-labelledby="calculator-title"
+  >
+    <div class="wrap section-intro">
+      <span class="section-label">あなたの数字で、確かめる</span>
+      <h2 id="calculator-title">まずは、今の手取りから。</h2>
+      <p>売上と経費を入れると、結果が変わります。</p>
+    </div>
+    <ToolNav active="tedori" home />
+    <CalculatorPanel kind="tedori" />
+  </section>
+  <section class="wrap home-section home-future" id="future">
+    <div class="section-intro">
+      <span class="section-label">手取りの、その先へ</span>
+      <h2>今のペースで、将来はどうなる？</h2>
+      <p>資産1億円への到達割合「億率」を、選んだ仮定で試算します。</p>
+    </div>
+    <OkuritsuCalculator simple />
+  </section>
+  <section class="wrap home-section block">
+    <h2>これから独立する人へ</h2>
+    <p>
+      <a href="/dokuritsu/">独立する前のお金と手続きの準備を順に確認 →</a>
+    </p>
+    <p>会社員との違いと、独立初年度に必要な資金を先に確認しましょう。</p>
+    <nav class="guide-nav">
+      <a href="/hikaku/kaishain-600/">
+        会社員年収600万円と独立後の手取りを比較
+      </a>
+      <a href="/guide/dokuritsu-1nenme/">独立1年目の落とし穴</a>
+      <a href="/guide/shiharai-calendar/">税金と保険料の支払いカレンダー</a>
+      <a href="/guide/dokuritsu-1nenme/#opening">開業届・青色申告の届出</a>
+    </nav>
+  </section>
+  <section class="wrap tool-cards" aria-label="3つの計算ツール">
+    {tools.map((tool) => (
+      <article class="block">
+        <span class="kicker">{tool.question}</span>
+        <h2>{tool.title}</h2>
+        <p>{tool.body}</p>
+        <a class="primary-link" href={`/tools/${tool.slug}/`}>
+          {tool.cta}
+          <span aria-hidden="true"> →</span>
+        </a>
+      </article>
+    ))}
+  </section>
+  <div class="wrap home-guides">
+    <nav class="guide-nav" aria-label="ガイドの目次">
+      <a href="#hayami">手取り早見表</a>
+      <a href="#cases">職業別モデルケース</a>
+      <a href="#guides">お金のガイド</a>
+    </nav>
+    <section id="hayami" class="home-section">
+      <div class="sec-title">
+        <h2>フリーランスの手取り早見表</h2>
+        <p>
+          「売上−経費」の利益ごとの抜粋です。青色申告65万円控除・東京23区・独身・40歳未満・個人事業税ありで計算しています。
+        </p>
+      </div>
+      <div
+        class="table-scroll"
+        tabindex="0"
+        role="region"
+        aria-label="手取り早見表（横にスクロールできます）"
+      >
+        <table class="data home-table">
+          <caption class="sr-only">
+            利益別の年間・月間手取りと同じ手取りの会社員年収
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">利益</th>
+              <th scope="col">年間の手取り</th>
+              <th scope="col">月あたり</th>
+              <th scope="col">同じ手取りの会社員年収</th>
+            </tr>
+          </thead>
+          <tbody>
+            {profits.map((p) => {
+              const r = sole(p * 10000, 0, options);
+              return (
+                <tr>
+                  <th scope="row">
+                    <a href={`/nenshu/${p}/`}>{man(r.profit)}</a>
+                  </th>
+                  <td class="take">{yen(r.total)}</td>
+                  <td>{yen(r.total / 12)}</td>
+                  <td>{man(employeeEquivalent(r.total))}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <p class="assumptions">
+        概算であり正確な税額を保証しません。令和8年分の税制・令和8年度の保険料率を使い、軽減・減免などを簡略化しています。金額を押すと、その利益の内訳や条件別の差額を確認できます。
+      </p>
+    </section>
+    <p>
+      <a href="/nenshu/">利益300万〜2,000万円の全25ページと早見表を見る →</a>
+    </p>
+    <nav class="guide-nav" aria-label="会社員との手取り比較">
+      <a href="/hikaku/kaishain-400/">会社員400万円と比較</a>
+      <a href="/hikaku/kaishain-600/">会社員600万円と比較</a>
+      <a href="/hikaku/kaishain-800/">会社員800万円と比較</a>
+      <a href="/hikaku/kaishain-1200/">会社員1,200万円と比較</a>
+    </nav>
+    <section id="cases" class="home-section">
+      <div class="sec-title">
+        <h2>職業別モデルケース</h2>
+        <p>
+          よくある売上と経費の組み合わせで計算しました。カードからその数字を手取り計算に引き継げます。
+        </p>
+      </div>
+      <div class="cases">
+        {modelCases.map((c) => {
+          const r = sole(c.sales * 10000, c.exp * 10000, {
+            ...options,
+            jigyo: c.jigyo,
+          });
+          const query = serializeState('tedori', {
+            ...defaults.tedori,
+            sales: c.sales,
+            exp: c.exp,
+            jigyo: c.jigyo,
+          });
+          return (
+            <a class="case" href={`/tools/tedori/?${query}`}>
+              <strong>{c.job}</strong>
+              <span class="meta">
+                {c.note}／売上{man(c.sales * 10000)}・経費{man(c.exp * 10000)}
+              </span>
+              <span class="val">{man(r.total)}</span>
+              <span class="meta">月 {man(r.total / 12)}</span>
+              <span class="go">手取り計算で詳しく見る →</span>
+            </a>
+          );
+        })}
+      </div>
+      <p class="assumptions">
+        仮定に基づくモデルケースです。プログラマーなどの個人事業税は仕事の内容で判断が分かれます。都道府県税事務所へ確認してください。
+      </p>
+    </section>
+    <section id="guides" class="home-section">
+      <div class="sec-title">
+        <h2>独立後のお金のガイド</h2>
+        <p>計算結果を、手取りのしくみと支払い時期から読み解きます。</p>
+      </div>
+      <div class="guide-grid">
+        <a class="block guide-card" href="/tools/tedori/#shikumi">
+          <h3>手取りが決まるしくみ</h3>
+          <p>売上から何を引くのか、8つの段階で見ていきます。</p>
+          <span>しくみを見る →</span>
+        </a>
+        <a class="block guide-card" href="/tools/tedori/#calendar">
+          <h3>支払いカレンダー</h3>
+          <p>税金と保険料を払う月を知り、現金を残す目安にします。</p>
+          <span>カレンダーを見る →</span>
+        </a>
+        <a class="block guide-card" href="/tools/houjinka/#check-title">
+          <h3>法人化チェックリスト</h3>
+          <p>税金以外にも、契約・家族・年金から判断します。</p>
+          <span>チェックする →</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

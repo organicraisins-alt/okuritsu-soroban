@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import OkuritsuCalculator from '../../components/OkuritsuCalculator.astro';
+import FAQ from '../../components/FAQ.astro';
+import ToolNav from '../../components/ToolNav.astro';
+const faqs = [
+  {
+    question: '億率とは何ですか？',
+    answer:
+      '選んだ条件で1万回シミュレーションし、目標年齢までに一度でも金融資産が1億円以上になった試行の割合です。将来の実現確率を保証する数字ではありません。',
+  },
+  {
+    question: '同じ入力なら同じ結果になりますか？',
+    answer:
+      '同じモデル版とシードなら同じ結果になります。共有URLにも両方を含めます。税制やモデルを更新した場合は結果が変わることがあります。',
+  },
+  {
+    question: 'iDeCoや共済を増やすと必ず有利ですか？',
+    answer:
+      '所得控除によって税額が下がる可能性がありますが、掛金自体は手取りへの追加収入ではありません。引出制限や受取時の課税もあり、生活費と掛金を賄えるか確認が必要です。',
+  },
+  {
+    question: '利回りはどの金融商品の実績ですか？',
+    answer:
+      '特定商品や銘柄の実績ではありません。利用者が選ぶ平均と標準偏差から正規乱数を生成する仮定です。商品の推奨や将来予測は行っていません。',
+  },
+];
+---
+
+<BaseLayout
+  title="資産1億円への到達割合をシミュレーション"
+  description="売上・経費から税引後の積立額を計算し、目標年齢までの資産1億円への到達割合を1万回試算。資産推移の幅と、青色申告・掛金・法人化・生活費を変えた差を比較できます。"
+  breadcrumbs={[
+    { name: 'ホーム', path: '/' },
+    { name: '億率計算', path: '/okuritsu/' },
+  ]}
+>
+  <ToolNav active="okuritsu" />
+  <article class="wrap income-article">
+    <header class="sec-title">
+      <span class="kicker">手取りから資産形成へ</span>
+      <h1>あなたの「億率」を計算する</h1>
+      <p>
+        今の働き方と生活費を続けたら、資産はどう動くでしょうか。選んだ仮定のもとで、1億円への到達割合と結果の幅を比べます。
+      </p>
+    </header>
+    <OkuritsuCalculator />
+    <details class="disclosure">
+      <summary>
+        計算のしくみと前提
+        <span class="disclosure-icon" aria-hidden="true">
+          ＋
+        </span>
+      </summary>
+      <div class="disclosure-body">
+        <p>
+          税引後の手取りから生活費を引き、年末に積み立てる額を求めます。現在の資産に毎年の利回りを掛け、積立額を足す計算を1万回繰り返します。各試行で異なる利回りが生まれますが、条件差分は同じ乱数で比べます。
+        </p>
+        <p>
+          初期資産が目標以上なら開始時点で到達済みです。途中で到達してから下落したケースも億率に含めます。グラフの中央値は各年の資産を並べた中央の値で、一つの実際の投資経路ではありません。
+        </p>
+        <p>
+          収入・生活費は毎年同じで、物価上昇や昇給は反映しません。現在の年齢で税保険条件を固定するため、将来の40歳・65歳到達、年金受給、税制改正を再現しません。
+        </p>
+      </div>
+    </details>
+    <FAQ items={faqs} />
+    <nav class="guide-nav">
+      <a href="/tools/tedori/">手取りを税金の内訳から確認</a>
+      <a href="/tools/houjinka/">法人化の手残りを比較</a>
+      <a href="/guide/dokuritsu-1nenme/">独立1年目に備えるお金</a>
+    </nav>
+  </article>
+</BaseLayout>

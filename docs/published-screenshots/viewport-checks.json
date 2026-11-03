@@ -1,0 +1,89 @@
+{
+  "localLayouts": [
+    {
+      "phrases": [
+        {
+          "fragments": 1,
+          "text": "フリーランスが"
+        },
+        {
+          "fragments": 1,
+          "text": "資産を築く、"
+        },
+        {
+          "fragments": 1,
+          "text": "その可能性を"
+        },
+        {
+          "fragments": 1,
+          "text": "数字で。"
+        }
+      ],
+      "scrollWidth": 361,
+      "width": 375
+    },
+    {
+      "phrases": [
+        {
+          "fragments": 1,
+          "text": "フリーランスが"
+        },
+        {
+          "fragments": 1,
+          "text": "資産を築く、"
+        },
+        {
+          "fragments": 1,
+          "text": "その可能性を"
+        },
+        {
+          "fragments": 1,
+          "text": "数字で。"
+        }
+      ],
+      "scrollWidth": 1266,
+      "width": 1280
+    }
+  ],
+  "publicViews": [
+    {
+      "hasTodo": false,
+      "operator": false,
+      "scrollWidth": 364,
+      "title": "フリーランスの手取りと資産形成を計算｜億率（おくりつ）",
+      "url": "https://okuritsu-soroban.com/",
+      "width": 375
+    },
+    {
+      "hasTodo": false,
+      "operator": true,
+      "scrollWidth": 364,
+      "title": "運営者情報と計算の確認・更新方針｜億率（おくりつ）",
+      "url": "https://okuritsu-soroban.com/about/",
+      "width": 375
+    }
+  ],
+  "publicWide": {
+    "phrases": [
+      {
+        "fragments": 1,
+        "text": "フリーランスが"
+      },
+      {
+        "fragments": 1,
+        "text": "資産を築く、"
+      },
+      {
+        "fragments": 1,
+        "text": "その可能性を"
+      },
+      {
+        "fragments": 1,
+        "text": "数字で。"
+      }
+    ],
+    "scrollWidth": 1269,
+    "url": "https://okuritsu-soroban.com/",
+    "width": 1280
+  }
+}

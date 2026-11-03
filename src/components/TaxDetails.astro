@@ -1,0 +1,54 @@
+---
+import { yen } from '../lib/tax/format';
+import type { calculationSteps } from '../lib/tax/advice';
+import type { paymentCalendar } from '../lib/tax/calendar';
+interface Props {
+  steps: ReturnType<typeof calculationSteps>;
+  calendar: ReturnType<typeof paymentCalendar>;
+}
+const { steps, calendar } = Astro.props;
+---
+
+<section id="shikumi" class="block">
+  <h2>この利益で手取りが決まるしくみ</h2>
+  <div class="steps">
+    {steps.map((step) => (
+      <div class="step">
+        <span>
+          {step.label}
+          <small>{step.note}</small>
+        </span>
+        <b>{step.amount < 0 ? '−' + yen(-step.amount) : yen(step.amount)}</b>
+      </div>
+    ))}
+  </div>
+</section>
+<section id="calendar" class="calendar-section">
+  <h2>この利益の支払いカレンダー</h2>
+  <p>
+    同程度の所得が続く場合の概算です。国保は6月〜翌3月、住民税は6・8・10・翌1月の分納として計算しています。
+  </p>
+  <div class="cal">
+    {calendar.months.map((m) => (
+      <div class:list={['mon', { peak: m.month === calendar.peakMonth }]}>
+        <div class="m">
+          {m.month}月
+          {m.month === calendar.peakMonth && (
+            <span class="tag warn">いちばん多い月</span>
+          )}
+        </div>
+        <div class="amt">{yen(m.amt)}</div>
+        <ul>
+          {m.items.map((i) => (
+            <li>
+              {i.label} {i.display}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <p class="assumptions">
+    予定納税は簡略化した判定です。独立1年目の実請求、保険料の年度切替や消費税は含みません。実際の通知書で納期と金額を確認してください。
+  </p>
+</section>

@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="ページが見つかりません"
+  description="指定されたページは見つかりませんでした。当サイトのホームからご確認ください。"
+  breadcrumbs={[
+    { name: 'ホーム', path: '/' },
+    { name: 'ページが見つかりません', path: '/404/' },
+  ]}
+  noindex
+>
+  <section class="wrap foundation">
+    <div class="block">
+      <h1>ページが見つかりません</h1>
+      <p>URLをご確認いただくか、ホームからご覧ください。</p>
+      <a href="/">ホームに戻る</a>
+    </div>
+  </section>
+</BaseLayout>

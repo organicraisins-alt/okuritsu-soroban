@@ -1,0 +1,218 @@
+---
+import MoneyField from './MoneyField.astro';
+import Help from './Help.astro';
+import { defaults } from '../lib/tools/state';
+import { invoiceYears, transitionForYear } from '../lib/tax/invoice';
+import { describeConditions } from '../lib/ui/conditions';
+const s = defaults.invoice;
+---
+
+<form
+  class="form invoice-form"
+  id="tool-form"
+  data-kind="invoice"
+  novalidate
+  autocomplete="off"
+>
+  <div class="form-heading">
+    <span class="section-label">個人事業主の年間試算</span>
+    <h2>売上と取引の条件を入力</h2>
+  </div>
+  <p class="input-error" id="form-error" role="alert" hidden></p>
+  <MoneyField
+    id="iv-sales"
+    name="sales"
+    label="売上（税抜）"
+    value={s.sales}
+    help="1年間の税抜売上です。すべて標準税率10%で計算します。"
+    numeric
+  />
+  <MoneyField
+    id="iv-buy"
+    name="buy"
+    label="経費（課税仕入れ・税抜）"
+    value={s.buy}
+    help="PC・ソフト・外注費など消費税がかかる経費です。保険料・給与などは含みません。全額を仕入税額控除できる前提です。"
+    numeric
+  />
+  <div class="field">
+    <label for="iv-year">計算する年分</label>
+    <select id="iv-year" name="taxYear" data-key="taxYear">
+      {invoiceYears.map((y) => (
+        <option value={y} selected={y === s.taxYear}>
+          {y}年分
+        </option>
+      ))}
+    </select>
+    <p class="hint effective-ratio" id="iv-effective" data-effective-ratio>
+      {transitionForYear(s.taxYear).label}
+    </p>
+  </div>
+  <div class="field">
+    <div class="field-label">
+      <label for="iv-b2b">事業者向け売上の割合</label>
+      <Help
+        id="iv-b2b-help"
+        label="事業者向け売上の割合"
+        text="インボイスがないと取引先の仕入税額控除に影響する売上の割合です。法人だけでなく、課税事業者の個人も含みます。取引先が簡易課税などで影響を受けない分は含めません。"
+      />
+    </div>
+    <div class="range-caption">
+      <output id="iv-b2b-v" for="iv-b2b">
+        90
+      </output>
+      <span>%</span>
+    </div>
+    <div class="threshold-range">
+      <input
+        type="range"
+        id="iv-b2b"
+        name="b2b"
+        data-key="b2b"
+        min="0"
+        max="100"
+        step="1"
+        value="90"
+      />
+      <span
+        class="threshold-marker"
+        id="iv-threshold-marker"
+        aria-hidden="true"
+        hidden
+      ></span>
+    </div>
+    <div class="range-ends">
+      <span>0%</span>
+      <span>100%</span>
+    </div>
+    <p class="hint" id="iv-threshold-hint"></p>
+  </div>
+  <p class="conditions-preview" data-condition-summary>
+    {describeConditions('invoice', s)}
+  </p>
+  <details class="advanced-options" id="additional-conditions">
+    <summary>
+      詳細設定
+      <span class="disclosure-icon" aria-hidden="true">
+        ＋
+      </span>
+    </summary>
+    <div class="advanced-fields">
+      <div class="field">
+        <label for="iv-base">2年前の課税売上（基準期間）</label>
+        <select id="iv-base" name="baseBand" data-key="baseBand">
+          <option value="under1000">1,000万円以下</option>
+          <option value="under5000">1,000万円超〜5,000万円以下</option>
+          <option value="over5000">5,000万円超</option>
+          <option value="unknown">未確認（旧URLの条件を確認）</option>
+        </select>
+        <p class="hint">
+          特例と簡易課税は、当年ではなく基準期間の売上で判定します。
+        </p>
+      </div>
+      <div class="field">
+        <span class="lbl">特例の適用条件</span>
+        <label class="check">
+          <input
+            type="checkbox"
+            name="registeredFromExempt"
+            data-key="registeredFromExempt"
+            checked
+          />
+          <span>インボイス登録によって免税から課税事業者になった</span>
+        </label>
+        <label class="check">
+          <input
+            type="checkbox"
+            name="specialExcluded"
+            data-key="specialExcluded"
+          />
+          <span>
+            資産取得・課税期間短縮・特定期間の売上等、特例の除外条件がある
+          </span>
+        </label>
+        <p class="hint">
+          簡易課税の届出、その他の適用制限も税務署などで確認してください。
+        </p>
+      </div>
+      <div class="field">
+        <label for="iv-kind">業種（みなし仕入率）</label>
+        <select id="iv-kind" name="deem" data-key="deem">
+          <option value="0.9">第1種 卸売業（90%）</option>
+          <option value="0.8">第2種 小売業（80%）</option>
+          <option value="0.7">第3種 製造業・建設業（70%）</option>
+          <option value="0.6">第4種 飲食店など（60%）</option>
+          <option value="0.5" selected>
+            第5種 デザイン・ライター・IT・コンサル（50%）
+          </option>
+          <option value="0.4">第6種 不動産業（40%）</option>
+        </select>
+      </div>
+      <div class="field">
+        <div class="field-label">
+          <label for="iv-discount">値下げ要求の割合</label>
+          <Help
+            id="iv-discount-help"
+            label="値下げ要求の割合"
+            text="取引先が控除できない消費税相当額のうち、値下げで負担する割合です。100%は全額負担の上限目安、0%は値下げなしです。実際に必ず要求される金額ではありません。"
+          />
+        </div>
+        <div class="range-caption">
+          <output id="iv-discount-v" for="iv-discount">
+            100
+          </output>
+          <span>%</span>
+        </div>
+        <input
+          type="range"
+          id="iv-discount"
+          name="discount"
+          data-key="discount"
+          min="0"
+          max="100"
+          step="1"
+          value="100"
+        />
+      </div>
+      <div class="field">
+        <label for="iv-ratio-mode">経過措置の設定</label>
+        <select id="iv-ratio-mode" name="ratioMode" data-key="ratioMode">
+          <option value="auto">年分に合わせて自動（月数で按分）</option>
+          <option value="manual">手動で上書き</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="iv-ratio">控除割合（%）</label>
+        <div class="money">
+          <input
+            id="iv-ratio"
+            name="ratio"
+            data-key="ratio"
+            data-scale="0.01"
+            inputmode="decimal"
+            value="77.5"
+            disabled
+          />
+          <span>%</span>
+        </div>
+        <p class="hint">
+          自動は毎月の売上が同じ場合の目安です。時期による偏りは、手動の実効割合に反映してください。
+        </p>
+      </div>
+    </div>
+  </details>
+  <button class="btn primary calculate-button" type="submit">
+    <span class="invoice-desktop-action">この条件で計算する →</span>
+    <span class="invoice-mobile-action">結果を見る ↓</span>
+  </button>
+  <p class="form-assist">入力を変えると自動で更新されます。</p>
+  <button class="share-btn" type="button" data-share>
+    この条件のURLをコピー
+  </button>
+  <p class="share-status" data-share-status></p>
+  <noscript>
+    <p>
+      表示中は初期条件の結果です。条件を変えるにはJavaScriptを有効にしてください。
+    </p>
+  </noscript>
+</form>

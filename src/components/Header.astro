@@ -1,0 +1,72 @@
+---
+import { SITE_LOGO, SITE_READING, SITE_COPY } from '../../config/site.mjs';
+import { TAX_BADGE } from '../lib/tax/params';
+interface Props {
+  compact?: boolean;
+  taxBadge?: string;
+}
+const { compact = false, taxBadge = TAX_BADGE } = Astro.props;
+const home = Astro.url.pathname === '/';
+const links = [
+  ['/okuritsu/', '億率を計算'],
+  ['/tools/tedori/', '手取り'],
+  ['/tools/houjinka/', '法人化'],
+  ['/dokuritsu/', '独立の準備'],
+];
+---
+
+<header class="site">
+  <div class="wrap header-main">
+    <a
+      class="brand"
+      href="/"
+      aria-label={`${SITE_LOGO} ${SITE_READING} ホーム`}
+    >
+      <b>
+        {SITE_LOGO}
+        <span class="brand-reading">{SITE_READING}</span>
+      </b>
+      <small>{SITE_COPY}</small>
+    </a>
+    {!compact && (
+      <>
+        <nav class="global-nav" aria-label="メインメニュー">
+          {links.map(([href, label]) => (
+            <a
+              href={href}
+              aria-current={Astro.url.pathname === href ? 'page' : undefined}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+        <a class="header-cta" href={home ? '#calculator' : '/tools/tedori/'}>
+          計算をはじめる <span aria-hidden="true">→</span>
+        </a>
+        <details class="mobile-menu">
+          <summary aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+          </summary>
+          <nav aria-label="モバイルメニュー">
+            {links.map(([href, label]) => (
+              <a href={href}>
+                {label}
+                <span aria-hidden="true">→</span>
+              </a>
+            ))}
+          </nav>
+        </details>
+      </>
+    )}
+  </div>
+  <div class="tax-strip">
+    <div class="wrap">
+      <span class="badge-year">{taxBadge}</span>
+      <a href="/logic/">
+        計算の前提 <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</header>

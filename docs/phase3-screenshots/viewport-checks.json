@@ -1,0 +1,26 @@
+[
+  {
+    "amount": 500,
+    "annual": "3,706,160円",
+    "scale": 0.800000011920929,
+    "scroll": 375,
+    "viewportHeight": 1500,
+    "width": 375
+  },
+  {
+    "amount": 800,
+    "annual": "5,407,260円",
+    "scale": 0.800000011920929,
+    "scroll": 375,
+    "viewportHeight": 1500,
+    "width": 375
+  },
+  {
+    "amount": 1200,
+    "annual": "7,742,360円",
+    "scale": 0.800000011920929,
+    "scroll": 375,
+    "viewportHeight": 1500,
+    "width": 375
+  }
+]

@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CalculatorPanel from './CalculatorPanel.astro';
+import ToolNav from './ToolNav.astro';
+import Checklist from './Checklist.astro';
+import type { ToolKind } from '../lib/tools/state';
+interface Props {
+  kind: ToolKind;
+  title: string;
+  description: string;
+}
+const { kind, title, description } = Astro.props;
+---
+
+<BaseLayout
+  title={`${title}`}
+  description={description}
+  compactNavigation={kind === 'invoice'}
+  taxBadge={
+    kind === 'invoice'
+      ? '令和8年度税制改正（インボイス経過措置の見直し）を反映'
+      : undefined
+  }
+  breadcrumbs={[
+    { name: 'ホーム', path: '/' },
+    { name: title, path: `/tools/${kind}/` },
+  ]}
+>
+  <ToolNav active={kind} />
+  <section class="hero">
+    <div class="wrap">
+      <h1>{title}</h1>
+      <p>
+        {
+          {
+            tedori: '売上と経費から、税金・保険料を引いた手取りを計算。',
+            houjinka: '個人事業主と法人の手残りを、同じ条件で比較。',
+            invoice:
+              '個人事業主向けの試算です。登録の有無と、消費税・値下げによる差を比較します。',
+          }[kind]
+        }
+      </p>
+    </div>
+  </section>
+  <CalculatorPanel kind={kind} />
+  {kind === 'houjinka' && <Checklist />}
+</BaseLayout>

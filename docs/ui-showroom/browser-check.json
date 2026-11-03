@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-27T04:29:42.735Z",
+  "base": "http://127.0.0.1:4322",
+  "viewports": [
+    375,
+    1280
+  ],
+  "pagesAt375": 67,
+  "overflow": [],
+  "consoleErrors": [],
+  "sitemapPages": 60,
+  "checks": [
+    "help click/Escape/focus",
+    "independent home calculator state and reload",
+    "restored condition summary",
+    "hidden invalid field reveals",
+    "calendar anchor and open state after recalculation",
+    "manual corporate salary",
+    "invoice hidden industry summary",
+    "custom return expands settings",
+    "asset table remains open"
+  ],
+  "includes404": true
+}

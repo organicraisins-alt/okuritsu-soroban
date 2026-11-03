@@ -1,0 +1,48 @@
+---
+import Icon from './Icon.astro';
+interface Props {
+  active?: string;
+  home?: boolean;
+}
+const { active, home = false } = Astro.props;
+const links = [
+  {
+    slug: 'tedori',
+    title: '手取り',
+    icon: 'calculator' as const,
+    href: '/tools/tedori/',
+  },
+  {
+    slug: 'houjinka',
+    title: '法人化',
+    icon: 'compare' as const,
+    href: '/tools/houjinka/',
+  },
+  {
+    slug: 'okuritsu',
+    title: '億率',
+    icon: 'chart' as const,
+    href: '/okuritsu/',
+  },
+  {
+    slug: 'invoice',
+    title: 'インボイス',
+    icon: 'invoice' as const,
+    href: '/tools/invoice/',
+  },
+];
+---
+
+<nav class="wrap tool-nav" aria-label="計算ツール">
+  {links.map((l) => (
+    <a
+      href={home && l.slug === 'tedori' ? '#calculator' : l.href}
+      aria-current={
+        l.slug === active ? (home ? 'location' : 'page') : undefined
+      }
+    >
+      <Icon name={l.icon} />
+      <span>{l.title}</span>
+    </a>
+  ))}
+</nav>

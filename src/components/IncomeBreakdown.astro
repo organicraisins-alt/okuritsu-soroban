@@ -1,0 +1,59 @@
+---
+import { yen } from '../lib/tax/format';
+import type { SoleResult } from '../lib/tax/sole';
+interface Props {
+  result: SoleResult;
+}
+const { result: r } = Astro.props;
+const parts = [
+  ['所得税', r.it, '--seg-it'],
+  ['住民税', r.rt, '--seg-rt'],
+  ['国民健康保険', r.kk, '--seg-kk'],
+  ['国民年金', r.pn, '--seg-pn'],
+  ['個人事業税', r.jg, '--seg-jg'],
+  ['手取り', r.total, '--take'],
+] as const;
+---
+
+<section class="block">
+  <h2>税金・保険料と手取りの内訳</h2>
+  <div class="bar" aria-hidden="true">
+    {parts.map(([label, value, color]) => (
+      <i
+        style={`width:${(Math.max(0, value) / r.profit) * 100}%;background:var(${color})`}
+        title={label}
+      ></i>
+    ))}
+  </div>
+  <div
+    class="table-scroll"
+    tabindex="0"
+    role="region"
+    aria-label="税金と保険料の内訳表"
+  >
+    <table class="data plain breakdown-table">
+      <caption class="sr-only">税金・保険料・手取りの年額</caption>
+      <thead>
+        <tr>
+          <th scope="col">項目</th>
+          <th scope="col">年額</th>
+        </tr>
+      </thead>
+      <tbody>
+        {parts.map(([label, value, color]) => (
+          <tr>
+            <th scope="row">
+              <span
+                class="legend-dot"
+                style={`background:var(${color})`}
+                aria-hidden="true"
+              ></span>
+              {label}
+            </th>
+            <td>{yen(value)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>

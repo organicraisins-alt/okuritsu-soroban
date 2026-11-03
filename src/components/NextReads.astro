@@ -1,0 +1,14 @@
+---
+import { relatedPages } from '../data/related';
+---
+
+<nav class="wrap income-article block next-reads" aria-label="次に読むページ">
+  <h2>次に読むページ</h2>
+  <ul>
+    {relatedPages(Astro.url.pathname).map((l) => (
+      <li>
+        <a href={l.href}>{l.label}</a>
+      </li>
+    ))}
+  </ul>
+</nav>

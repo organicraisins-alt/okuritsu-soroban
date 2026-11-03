@@ -1,0 +1,58 @@
+[
+  {
+    "page": "top",
+    "height": 4217,
+    "scale": 0.800000011920929,
+    "scroll": 375,
+    "width": 375
+  },
+  {
+    "page": "tedori",
+    "height": 5464,
+    "scale": 0.800000011920929,
+    "scroll": 375,
+    "width": 375
+  },
+  {
+    "page": "houjinka",
+    "height": 4166,
+    "scale": 0.800000011920929,
+    "scroll": 375,
+    "width": 375
+  },
+  {
+    "page": "invoice",
+    "height": 3762,
+    "scale": 0.800000011920929,
+    "scroll": 375,
+    "width": 375
+  },
+  {
+    "page": "top",
+    "height": 2284,
+    "scale": 0.800000011920929,
+    "scroll": 1280,
+    "width": 1280
+  },
+  {
+    "page": "tedori",
+    "height": 3092,
+    "scale": 0.800000011920929,
+    "scroll": 1280,
+    "width": 1280
+  },
+  {
+    "page": "houjinka",
+    "height": 2495,
+    "scale": 0.800000011920929,
+    "scroll": 1280,
+    "width": 1280
+  },
+  {
+    "page": "invoice",
+    "height": 1937,
+    "scale": 0.800000011920929,
+    "scroll": 1280,
+    "width": 1280
+  }
+]

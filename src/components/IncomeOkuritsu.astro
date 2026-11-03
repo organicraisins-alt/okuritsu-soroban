@@ -1,0 +1,34 @@
+---
+import AssumptionLinks from './AssumptionLinks.astro';
+import { defaults, simulate, serializeInput } from '../lib/okuritsu/model';
+import { shareMarkup } from '../lib/tools/share';
+import { yen } from '../lib/tax/format';
+import { investmentNotice } from '../lib/okuritsu/render';
+const { profit } = Astro.props as { profit: number };
+const input = { ...defaults, sales: profit, expenses: 0 },
+  r = simulate(input);
+---
+
+<section class="block">
+  <h2>この利益での億率</h2>
+  <p class="big">
+    {r.probability.toFixed(1)}
+    <small>%</small>
+  </p>
+  <p>60歳時点の資産中央値：{yen(r.points.at(-1)!.p50)}</p>
+  <p class="assumptions">
+    30歳・金融資産0円・生活費年300万円・青色65万円・掛金なし・平均4%/幅15%、1万回の仮定です。
+    {investmentNotice}
+    <AssumptionLinks />
+  </p>
+  <a href={`/okuritsu/?${serializeInput(input)}`}>
+    この利益を億率計算へ引き継ぐ →
+  </a>
+  <Fragment
+    set:html={shareMarkup(
+      `フリーランス利益${profit / 10000}万円、私の億率は${r.probability.toFixed(1)}%でした #億率`,
+      `/nenshu/${profit / 10000}/`,
+      serializeInput(input),
+    )}
+  />
+</section>

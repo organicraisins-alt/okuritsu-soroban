@@ -1,0 +1,151 @@
+---
+import { defaults, presets, type OkuritsuInput } from '../lib/okuritsu/model';
+import { renderOkuritsu } from '../lib/okuritsu/render';
+import Help from './Help.astro';
+import OkuritsuField from './OkuritsuField.astro';
+const { simple = false } = Astro.props as { simple?: boolean };
+type Field = {
+  key: keyof OkuritsuInput;
+  label: string;
+  scale: number;
+  step: string;
+  help?: string;
+};
+const fields: Field[] = [
+  { key: 'sales', label: '年間の売上（万円）', scale: 10000, step: '0.1' },
+  {
+    key: 'expenses',
+    label: '年間の経費（万円）',
+    scale: 10000,
+    step: '0.1',
+    help: '仕事に使う費用です。生活費やiDeCo・共済の掛金はここに含めません。',
+  },
+  { key: 'age', label: '現在の年齢（歳）', scale: 1, step: '1' },
+  {
+    key: 'targetAge',
+    label: '目標の年齢（歳）',
+    scale: 1,
+    step: '1',
+    help: 'この年齢までに一度でも資産1億円に届く試行の割合を計算します。',
+  },
+  ...(!simple
+    ? [
+        {
+          key: 'assets' as const,
+          label: '現在の金融資産（万円）',
+          scale: 10000,
+          step: '0.1',
+          help: '預金・投資などの合計です。不動産は含めません。このモデルでは全資産に同じ利回りを適用します。',
+        },
+        {
+          key: 'living' as const,
+          label: '年間の生活費（万円）',
+          scale: 10000,
+          step: '0.1',
+          help: '税金・保険料・事業の経費を除く、年間の暮らしの費用です。手取りと生活費は毎年同じと仮定します。',
+        },
+      ]
+    : []),
+];
+const savings: Field[] = [
+  {
+    key: 'ideco',
+    label: 'iDeCo（月額・円）',
+    scale: 12,
+    step: '1000',
+    help: '2026年11月までの第1号上限（月6.8万円・国民年金基金等と合算、20〜59歳）を固定したモデルです。12月改定などを将来の年ごとには反映しません。引出制限や受取時課税は再現しません。',
+  },
+  {
+    key: 'kyosai',
+    label: '小規模企業共済（月額・円）',
+    scale: 12,
+    step: '500',
+    help: '加入資格を満たす前提です。掛金は所得控除に反映し、積立資産に二重加算しません。実際の給付や引出条件・受取課税は再現しません。',
+  },
+  { key: 'mean', label: '平均利回り（年率%）', scale: 0.01, step: '0.1' },
+  {
+    key: 'volatility',
+    label: '値動きの幅（標準偏差%）',
+    scale: 0.01,
+    step: '0.1',
+    help: '年ごとの利回りが平均からどの程度ばらつくかという仮定です。大きいほど結果の幅が広がります。',
+  },
+];
+---
+
+<section
+  class:list={['okuritsu-calculator', { 'simple-calculator': simple }]}
+  data-okuritsu
+  data-simple={String(simple)}
+>
+  <form class="okuritsu-form block" novalidate>
+    <div class="form-heading">
+      <span class="section-label">あなたの条件</span>
+      <h2>{simple ? '4つの数字で試算' : '今の暮らしと目標を入力'}</h2>
+    </div>
+    <div class="input-grid">
+      {fields.map((f) => (
+        <OkuritsuField field={f} />
+      ))}
+    </div>
+    {!simple && (
+      <>
+        <div class="field">
+          <div class="field-label">
+            <label for="oku-preset">利回りの仮定</label>
+            <Help
+              id="oku-preset-help"
+              label="利回りの仮定"
+              text="利回りは利用者が選ぶ仮定です。特定商品の実績や推奨、将来予測ではありません。自由入力では平均と値動きの幅を変更できます。"
+            />
+          </div>
+          <select id="oku-preset" data-preset>
+            {presets.map((p, i) => (
+              <option value={i} selected={i === 1}>
+                {p.label}
+              </option>
+            ))}
+            <option value="custom">自由入力</option>
+          </select>
+        </div>
+        <p class="conditions-preview" data-oku-summary>
+          青色65万円・掛金なし／平均4%・幅15%
+        </p>
+        <details class="advanced-options" id="oku-additional">
+          <summary>
+            申告・掛金・利回りを変更
+            <span class="disclosure-icon" aria-hidden="true">
+              ＋
+            </span>
+          </summary>
+          <div class="advanced-fields">
+            <div class="field">
+              <label for="oku-blue">申告方法</label>
+              <select id="oku-blue" data-oku="blue" data-scale="1">
+                <option value="0">白色申告</option>
+                <option value="100000">青色申告10万円控除</option>
+                <option value="650000" selected>
+                  青色申告65万円控除
+                </option>
+              </select>
+            </div>
+            <div class="input-grid">
+              {savings.map((f) => (
+                <OkuritsuField field={f} />
+              ))}
+            </div>
+          </div>
+        </details>
+      </>
+    )}
+    <button class="btn primary calculate-button" type="submit">
+      億率を計算する <span aria-hidden="true">→</span>
+    </button>
+    <p data-oku-errors role="alert" class="input-error" hidden></p>
+    <p data-oku-status role="status" class="sr-only"></p>
+  </form>
+  <div data-oku-result set:html={renderOkuritsu(defaults, simple)} />
+</section>
+<script>
+  import '../lib/okuritsu/client';
+</script>

@@ -1,0 +1,143 @@
+---
+import NextReads from '../components/NextReads.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Analytics from '../components/Analytics.astro';
+import {
+  SITE_NAME,
+  siteTitle,
+  siteIdentity,
+  ogImagePath,
+  pageUrl,
+  breadcrumbJsonLd,
+  serializeJsonLd,
+} from '../../config/site.mjs';
+import '../styles/global.css';
+import '../styles/showroom.css';
+import '../styles/invoice.css';
+interface Props {
+  title: string;
+  description: string;
+  breadcrumbs?: { name: string; path: string }[];
+  noindex?: boolean;
+  compactNavigation?: boolean;
+  taxBadge?: string;
+}
+const {
+  title: rawTitle,
+  description,
+  breadcrumbs = [{ name: 'ホーム', path: '/' }],
+  noindex = false,
+  compactNavigation = false,
+  taxBadge,
+} = Astro.props;
+const title = siteTitle(rawTitle);
+const site = Astro.site?.href;
+const identity = site
+  ? { '@context': 'https://schema.org', '@graph': siteIdentity(site) }
+  : undefined;
+const ogImage = pageUrl(site, ogImagePath(Astro.url.pathname));
+const canonical = pageUrl(site, Astro.url.pathname);
+const jsonLd = breadcrumbJsonLd(site, breadcrumbs);
+---
+
+<!doctype html>
+<html lang="ja" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    {(!site || noindex) && <meta name="robots" content="noindex, nofollow" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    {ogImage && (
+      <>
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={`${title}の計算例`} />
+      </>
+    )}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap"
+    />
+    {jsonLd && (
+      <script
+        is:inline
+        type="application/ld+json"
+        set:html={serializeJsonLd(jsonLd)}
+      />
+    )}
+    {identity && (
+      <script
+        is:inline
+        type="application/ld+json"
+        set:html={serializeJsonLd(identity)}
+      />
+    )}
+    <Analytics />
+  </head>
+  <body data-page={Astro.url.pathname === '/' ? 'home' : 'content'}>
+    <a class="skip-link" href="#main">
+      本文へ移動
+    </a>
+    <Header compact={compactNavigation} taxBadge={taxBadge} />
+    {Astro.url.pathname !== '/' && !compactNavigation && (
+      <Breadcrumbs items={breadcrumbs} />
+    )}
+    <main id="main" tabindex="-1">
+      <slot />
+      <NextReads />
+      <aside class="wrap assumptions calculation-context">
+        <a href="/logic/">計算の前提・料率・制約を確認</a> ／{' '}
+        <a href="/about/">運営者の経験と確認方針</a>
+      </aside>
+    </main>
+    <Footer />
+    <div
+      class="toast"
+      id="app-toast"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      hidden
+    ></div>
+    <script>
+      import { initDisclosures } from '../lib/ui/client';
+      initDisclosures();
+      import { trackEvent } from '../lib/analytics';
+      document.addEventListener('click', (event) => {
+        if ((event.target as Element).closest('a[data-share-x]')) {
+          const path = location.pathname;
+          trackEvent(
+            'share_click',
+            path.startsWith('/nenshu/')
+              ? 'income'
+              : path === '/okuritsu/'
+                ? 'okuritsu'
+                : path === '/tools/tedori/'
+                  ? 'tedori'
+                  : 'other',
+          );
+        }
+        if ((event.target as Element).closest('a[data-placeholder]'))
+          event.preventDefault();
+      });
+    </script>
+  </body>
+</html>

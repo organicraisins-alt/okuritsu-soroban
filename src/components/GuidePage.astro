@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import VoluntaryCalculator from './VoluntaryCalculator.astro';
+import { reformComparison } from '../lib/tax/comparisons';
+import { man, yen } from '../lib/tax/format';
+import GuideCalculator from './GuideCalculator.astro';
+import {
+  OPERATOR_NAME,
+  OPERATOR_ROLE,
+  organizationReference,
+  serializeJsonLd,
+  pageUrl,
+} from '../../config/site.mjs';
+import type { Guide } from '../data/guides';
+const { guide } = Astro.props as { guide: Guide };
+const article = Astro.site
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: guide.title,
+      description: guide.description,
+      datePublished: guide.publishedAt,
+      dateModified: guide.updatedAt,
+      inLanguage: 'ja',
+      mainEntityOfPage: pageUrl(Astro.site.href, `/guide/${guide.slug}/`),
+      author: organizationReference(Astro.site.href),
+      publisher: organizationReference(Astro.site.href),
+    }
+  : null;
+---
+
+<BaseLayout
+  title={`${guide.title}`}
+  description={guide.description}
+  breadcrumbs={[
+    { name: 'ホーム', path: '/' },
+    { name: guide.title, path: `/guide/${guide.slug}/` },
+  ]}
+>
+  <article class="wrap income-article">
+    <header class="sec-title">
+      <span class="kicker">独立前後のお金のガイド</span>
+      <h1>{guide.title}</h1>
+      <p>{guide.intro}</p>
+    </header>
+    <p class="author">
+      執筆者：
+      <a href="/about/">
+        {OPERATOR_NAME}（{OPERATOR_ROLE}）
+      </a>{' '}
+      ／ 更新日：<time datetime={guide.updatedAt}>{guide.updatedAt}</time>
+    </p>
+    {article && (
+      <script
+        is:inline
+        type="application/ld+json"
+        set:html={serializeJsonLd(article)}
+      />
+    )}
+    {guide.answer && (
+      <section class="block" aria-label="この記事の結論">
+        <h2>先に押さえたいこと</h2>
+        <p>{guide.answer}</p>
+      </section>
+    )}
+    <nav class="block" aria-label="この記事の目次">
+      <h2>この記事で確認すること</h2>
+      <ul>
+        {guide.sections.map((s) => (
+          <li>
+            <a href={`#${s.id}`}>{s.title}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    {guide.sections.map((s) => (
+      <section id={s.id} class="block">
+        <h2>{s.title}</h2>
+        {s.paragraphs.map((p) => (
+          <p>{p}</p>
+        ))}
+      </section>
+    ))}
+    {guide.slug === 'zeisei-kaisei-2026' && (
+      <section class="block">
+        <h2>同じ関数による利益別比較（円）</h2>
+        <div
+          class="table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="利益別新旧比較"
+        >
+          <table class="data">
+            <thead>
+              <tr>
+                <th>利益</th>
+                <th>旧プロトタイプ</th>
+                <th>令和8年現行</th>
+                <th>差額</th>
+              </tr>
+            </thead>
+            <tbody>
+              {reformComparison().map((r) => (
+                <tr>
+                  <th>{man(r.profit)}</th>
+                  <td>{yen(r.old)}</td>
+                  <td>{yen(r.current)}</td>
+                  <td>{yen(r.difference)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p>
+          旧モデルは年度が混在しています。正式な令和7年との比較や、改正のみの効果ではありません。
+        </p>
+      </section>
+    )}
+    {guide.slug === 'kokuho-takai' && <VoluntaryCalculator />}
+    <GuideCalculator slug={guide.slug} />
+    <details class="block">
+      <summary>計算の前提と通知書を確認するポイント</summary>
+      <p>
+        計算は東京23区・単身などの限られた条件での概算です。所得税の年分と保険料の年度、加入期間、前年所得、源泉徴収・納付済み額をそろえて確認してください。実際の納付額は通知書・申告結果を優先します。
+      </p>
+      <p>
+        <a href="/logic/">料率・端数処理・計算に含まれない条件を確認</a>
+      </p>
+    </details>
+    <section class="block">
+      <h2>公式資料と更新日</h2>
+      <ul>
+        {guide.sources.map((s) => (
+          <li>
+            <a href={s.url}>{s.title}</a>
+          </li>
+        ))}
+      </ul>
+      <p>
+        内容更新日：<time datetime={guide.updatedAt}>{guide.updatedAt}</time>
+        。所得税の年分と保険料の年度を区別し、改正や納期限の変更があれば見直します。
+      </p>
+    </section>
+    {guide.sourceCheckedAt && (
+      <p class="assumptions">
+        主な公式出典の確認日：
+        <time datetime={guide.sourceCheckedAt}>{guide.sourceCheckedAt}</time>
+        。確認した資料と範囲は更新記録に保存しています。
+      </p>
+    )}
+  </article>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import { serializeJsonLd } from '../../config/site.mjs';
+interface Props {
+  items: { question: string; answer: string }[];
+}
+const { items } = Astro.props;
+const data = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+};
+---
+
+<section class="block">
+  <h2>よくある質問</h2>
+  {items.map((item) => (
+    <details>
+      <summary>{item.question}</summary>
+      <p>{item.answer}</p>
+    </details>
+  ))}
+</section>
+<script is:inline type="application/ld+json" set:html={serializeJsonLd(data)} />

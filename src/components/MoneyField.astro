@@ -1,0 +1,29 @@
+---
+import Help from './Help.astro';
+interface Props {
+  id: string;
+  name: string;
+  label: string;
+  value: number;
+  help?: string;
+  numeric?: boolean;
+}
+const { id, name, label, value, help, numeric = false } = Astro.props;
+---
+
+<div class="field">
+  <div class="field-label">
+    <label for={id}>{label}</label>
+    {help && <Help id={`${id}-help`} label={label} text={help} />}
+  </div>
+  <div class="money">
+    <input
+      id={id}
+      name={name}
+      data-key={name}
+      inputmode={numeric ? 'numeric' : 'decimal'}
+      value={value}
+    />
+    <span>万円</span>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+---
+import IncomePage from '../../components/IncomePage.astro';
+import { incomeAmounts } from '../../data/amounts';
+export function getStaticPaths() {
+  return incomeAmounts.map((amount) => ({
+    params: { amount: String(amount) },
+    props: { amount },
+  }));
+}
+interface Props {
+  amount: number;
+}
+const { amount } = Astro.props;
+---
+
+<IncomePage amount={amount} />

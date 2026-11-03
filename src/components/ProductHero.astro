@@ -1,0 +1,132 @@
+---
+import Icon from './Icon.astro';
+import { sole } from '../lib/tax/sole';
+import { man } from '../lib/tax/format';
+const sales = 8000000,
+  expenses = 1500000;
+const result = sole(sales, expenses, {
+  blue: 650000,
+  age40: false,
+  jigyo: true,
+  extra: 0,
+});
+const features = [
+  {
+    icon: 'calculator' as const,
+    title: '手取りを知る',
+    body: '税金と保険料を引いた、今の手残り。',
+    href: '#calculator',
+  },
+  {
+    icon: 'compare' as const,
+    title: '法人化を比べる',
+    body: '会社にした場合の違いを、同じ条件で。',
+    href: '/tools/houjinka/',
+  },
+  {
+    icon: 'chart' as const,
+    title: '将来を試算する',
+    body: '手取りと生活費から、資産の見通しを。',
+    href: '/okuritsu/',
+  },
+];
+---
+
+<section class="showroom-hero" aria-labelledby="home-title">
+  <div class="wrap showroom-grid">
+    <div class="showroom-copy">
+      <span class="section-label">フリーランスのお金の計算サイト</span>
+      <h1 id="home-title">
+        <span>手取りから、</span>
+        <br />
+        <em>これから</em>
+        <span>を考える。</span>
+      </h1>
+      <p>
+        手取り・法人化・将来の資産を、
+        <br class="desktop-break" />
+        数字で比較。
+      </p>
+      <div class="hero-actions">
+        <a class="primary-link" href="#calculator">
+          計算をはじめる <span aria-hidden="true">→</span>
+        </a>
+        <a class="text-link" href="#features">
+          できることを見る <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </div>
+    <div class="product-area">
+      <figure
+        class="product-visual"
+        role="img"
+        aria-label={`売上800万円・経費150万円の手取り計算例を表示したパソコン。年間の手取りは${man(result.total)}。東京23区・単身・青色65万円・40歳未満・事業税ありの概算です。`}
+      >
+        <img
+          src="/images/laptop-1000.webp"
+          srcset="/images/laptop-640.webp 640w, /images/laptop-1000.webp 1000w, /images/laptop-1536.webp 1536w"
+          sizes="(max-width: 700px) 100vw, 65vw"
+          width="1536"
+          height="1024"
+          alt=""
+          fetchpriority="high"
+        />
+        <div class="preview-screen" aria-hidden="true">
+          <div class="preview-top">
+            <b>
+              億率<span>おくりつ</span>
+            </b>
+            <span>手取りの計算例</span>
+          </div>
+          <div class="preview-content">
+            <div class="preview-fields">
+              <strong>売上と経費を入力</strong>
+              <span>
+                売上 <b>{man(sales)}</b>
+              </span>
+              <span>
+                経費 <b>{man(expenses)}</b>
+              </span>
+              <span class="preview-action">手取りを計算</span>
+            </div>
+            <div class="preview-result">
+              <small>年間の手取り</small>
+              <strong>{man(result.total)}</strong>
+              <span>月あたり {man(result.total / 12)}</span>
+              <div class="preview-bars">
+                <i style={`height:90%`}></i>
+                <i style={`height:${(90 * expenses) / sales}%`}></i>
+                <i style={`height:${(90 * result.total) / sales}%`}></i>
+              </div>
+              <div class="preview-chart-labels">
+                <span>売上</span>
+                <span>経費</span>
+                <span>手取り</span>
+              </div>
+            </div>
+          </div>
+          <span class="preview-caption">東京23区・単身・青色65万円の概算</span>
+        </div>
+      </figure>
+      <a class="scroll-cue" href="#calculator">
+        <span aria-hidden="true">↓</span> そのまま、あなたの数字で。
+      </a>
+    </div>
+  </div>
+  <div class="wrap feature-strip" id="features">
+    {features.map((f) => (
+      <a href={f.href}>
+        <span class="feature-icon">
+          <Icon name={f.icon} />
+        </span>
+        <span>
+          <strong>{f.title}</strong>
+          <small>{f.body}</small>
+        </span>
+        <span class="feature-arrow" aria-hidden="true">
+          ↗
+        </span>
+      </a>
+    ))}
+  </div>
+</section>

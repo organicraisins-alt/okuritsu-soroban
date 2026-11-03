@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const analyticsEnabled = Boolean(import.meta.env.PUBLIC_GA_ID?.trim());
+---
+
+<BaseLayout
+  title="プライバシーポリシー"
+  description="アクセス解析、広告、Cookie、計算入力と共有URLの取り扱いについて説明します。"
+  breadcrumbs={[
+    { name: 'ホーム', path: '/' },
+    { name: 'プライバシーポリシー', path: '/privacy/' },
+  ]}
+>
+  <article class="income-article">
+    <header class="page-head">
+      <h1>プライバシーポリシー</h1>
+    </header>
+    <section class="block">
+      <h2>計算入力と共有URL</h2>
+      <p>
+        計算処理はお使いのブラウザー内で行い、入力値を計算APIやデータベースへ送信・保存しません。共有URLには金額や年齢等の入力条件と計算モデル版・シードを「?」以降のクエリーとして含めます。
+      </p>
+      <p>
+        URLの更新だけではページを取得し直しませんが、再読み込みや共有先で開いたときは、条件を含むURLがCloudflare等の配信サーバーへ届きます。共有相手には入力条件が見えます。Xでシェアする場合は投稿画面を開く段階で投稿文と共有URLがXに伝わります。公開する内容を確認してから投稿してください。
+      </p>
+      <p>
+        従来の「#」形式も読み込めます。「#」以降はページ取得時のHTTPリクエストには含まれません。当サイトから送るGA4イベント・ページURLには金額やクエリーを含めません。
+      </p>
+      <p>
+        配信事業者はIPアドレス、アクセス日時、リクエストURL、ブラウザー情報などを処理する場合があります。個人の計算結果は、シェア用のOG画像をサーバーで生成するためには送信しません。
+      </p>
+    </section>
+    <section class="block">
+      <h2>GA4によるアクセス解析</h2>
+      <p>
+        {analyticsEnabled
+          ? '現在、Google Analytics 4（GA4）を使用しています。'
+          : '現在、GA4は未設定のためアクセス解析を行っていません。今後導入する場合は以下の方針で運用します。'}
+      </p>
+      <p>
+        GA4を有効にした場合、閲覧ページ、利用環境、操作に関する情報等をGoogleが処理し、サイト改善に利用します。当サイトから送るページURLと参照元は、金額を含むクエリーや「#」以降を除きます。入力金額を解析イベントに含めません。
+      </p>
+      <p>
+        Googleによる情報の取り扱いは
+        <a href="https://policies.google.com/privacy?hl=ja">
+          Googleプライバシーポリシー
+        </a>
+        と
+        <a href="https://policies.google.com/technologies/partner-sites?hl=ja">
+          Googleのサービスを使用するサイトやアプリから収集した情報の使用
+        </a>
+        をご確認ください。
+      </p>
+    </section>
+    <section class="block">
+      <h2>Cookieと外部サービス</h2>
+      <p>
+        GA4や広告サービスを導入した場合、Cookie等を使用することがあります。ブラウザーの設定でCookieを制限・削除でき、GA4は
+        <a href="https://tools.google.com/dlpage/gaoptout?hl=ja">
+          Googleのオプトアウトアドオン
+        </a>
+        でも無効化できます。一部サービスの機能が制限される場合があります。
+      </p>
+      <p>
+        表示用のフォントはGoogle
+        Fontsから取得するため、通信情報がGoogleへ送信されます。
+      </p>
+    </section>
+    <section class="block">
+      <h2>アフィリエイト広告</h2>
+      <p>
+        当サイトはアフィリエイト広告の掲載を予定しています。【PR】と表示する枠が広告です。現在の広告枠は準備中で、提携先へのリンクは未設定です。広告を通じた申込み等により、運営者が報酬を受け取る場合があります。
+      </p>
+      <p>
+        提携先での情報取得やCookieの利用は、各広告配信事業者・リンク先の方針が適用されます。契約条件や料金はリンク先でご確認ください。
+      </p>
+    </section>
+    <section class="block">
+      <h2>改定・お問い合わせ</h2>
+      <p>
+        サービスや法令等の変更に合わせて本方針を更新します。お問い合わせ先は
+        <a href="/contact/">お問い合わせページ</a>に掲載します（現在準備中）。
+      </p>
+      <p>制定日：2026年10月26日</p>
+    </section>
+  </article>
+</BaseLayout>
